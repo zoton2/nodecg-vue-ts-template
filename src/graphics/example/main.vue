@@ -8,7 +8,6 @@
 import Vue from 'vue';
 
 export default Vue.extend({
-  name: 'Example',
   data() {
     return {
       text: 'Example',

@@ -14,7 +14,7 @@
   "author": "zoton2",
   "scripts": {
     "autofix": "run-s autofix:*",
-    "autofix:browser": "npx eslint --fix --ext .ts,.vue,.html src/dashboard && eslint --fix --ext .ts,.vue,.html src/graphics",
+    "autofix:browser": "npx eslint --fix --ext .ts,.vue,.html src/dashboard && npx eslint --fix --ext .ts,.vue,.html src/graphics",
     "autofix:extension": "npx eslint --fix --ext .ts src/extension",
     "build": "run-s build:*",
     "build:browser": "trash .cache && cross-env NODE_ENV=production npm run bundle",
