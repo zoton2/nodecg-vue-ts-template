@@ -14,7 +14,7 @@
   "author": "zoton2",
   "scripts": {
     "autofix": "run-s autofix:*",
-    "autofix:browser": "npx eslint --fix --ext .ts,.vue,.html src/dashboard && eslint --fix --ext .js,.vue src/graphics",
+    "autofix:browser": "npx eslint --fix --ext .ts,.vue,.html src/dashboard && eslint --fix --ext .ts,.vue,.html src/graphics",
     "autofix:extension": "npx eslint --fix --ext .ts src/extension",
     "build": "run-s build:*",
     "build:browser": "trash .cache && cross-env NODE_ENV=production npm run bundle",
@@ -27,8 +27,8 @@
     "watch:extension": "trash extension && npx tsc -b tsconfig.extension.json -w"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^2.1.0",
-    "@typescript-eslint/parser": "^2.1.0",
+    "@typescript-eslint/eslint-plugin": "^1.13.0",
+    "@typescript-eslint/parser": "^1.13.0",
     "@vue/component-compiler-utils": "^3.0.0",
     "cross-env": "^5.2.1",
     "eslint": "^6.3.0",
