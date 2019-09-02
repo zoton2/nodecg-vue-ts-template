@@ -27,6 +27,7 @@
     "watch:extension": "trash extension && npx tsc -b tsconfig.extension.json -w"
   },
   "devDependencies": {
+    "@mdi/font": "^4.2.95",
     "@typescript-eslint/eslint-plugin": "^1.13.0",
     "@typescript-eslint/parser": "^1.13.0",
     "@vue/component-compiler-utils": "^3.0.0",
@@ -42,7 +43,9 @@
     "typescript": "^3.6.2",
     "vue": "^2.6.10",
     "vue-hot-reload-api": "^2.3.3",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.10",
+    "vuedraggable": "^2.23.0",
+    "vuetify": "^2.0.11"
   },
   "alias": {
     "vue": "./node_modules/vue/dist/vue.esm.js"

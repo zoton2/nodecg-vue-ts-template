@@ -1,7 +1,7 @@
 <template>
-  <div id="App">
+  <v-app>
     {{ text }}
-  </div>
+  </v-app>
 </template>
 
 <script lang="ts">
@@ -15,9 +15,3 @@ export default Vue.extend({
   },
 });
 </script>
-
-<style>
-  #App {
-    color: green;
-  }
-</style>
