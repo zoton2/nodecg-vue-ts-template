@@ -14,7 +14,7 @@
   "author": "zoton2",
   "scripts": {
     "autofix": "run-s autofix:*",
-    "autofix:browser": "npx eslint --fix --ext .ts,.vue,.html src/dashboard && npx eslint --fix --ext .ts,.vue,.html src/graphics",
+    "autofix:browser": "npx eslint --fix --ext .ts,.vue,.html src/dashboard && npx eslint --fix --ext .ts,.vue,.html src/graphics && npx eslint --fix --ext .ts src/browser_shared",
     "autofix:extension": "npx eslint --fix --ext .ts src/extension",
     "build": "run-s build:*",
     "build:browser": "trash .cache && cross-env NODE_ENV=production npm run bundle",
@@ -26,8 +26,12 @@
     "watch:browser": "npm run bundle",
     "watch:extension": "trash extension && npx tsc -b tsconfig.extension.json -w"
   },
+  "dependencies": {
+    "clone": "^2.1.2"
+  },
   "devDependencies": {
     "@mdi/font": "^4.2.95",
+    "@types/clone": "^0.1.30",
     "@typescript-eslint/eslint-plugin": "^1.13.0",
     "@typescript-eslint/parser": "^1.13.0",
     "@vue/component-compiler-utils": "^3.0.0",
@@ -45,7 +49,8 @@
     "vue-hot-reload-api": "^2.3.3",
     "vue-template-compiler": "^2.6.10",
     "vuedraggable": "^2.23.0",
-    "vuetify": "^2.0.11"
+    "vuetify": "^2.0.11",
+    "vuex": "^3.1.1"
   },
   "alias": {
     "vue": "./node_modules/vue/dist/vue.esm.js"

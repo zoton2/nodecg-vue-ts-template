@@ -68,6 +68,7 @@
     // "emitDecoratorMetadata": true,         /* Enables experimental support for emitting type metadata for decorators. */
   },
   "include": [
+    "src/browser_shared/**/*.ts",
     "src/dashboard/**/*.ts",
     "src/graphics/**/*.ts",
     "../../types/browser.d.ts"
