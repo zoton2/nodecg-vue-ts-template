@@ -4,21 +4,14 @@ module.exports = {
   parserOptions: {
     parser: '@typescript-eslint/parser',
     project: 'tsconfig.browser.json',
+    sourceType: 'module',
+    extraFileExtensions: ['.vue'],
   },
   env: {
-    browser: true,
     es6: true,
+    node: true,
   },
-  extends: [
-    'airbnb-base',
-    'plugin:vue/recommended',
-    'plugin:import/errors',
-    'plugin:import/warnings',
-    'plugin:import/typescript',
-  ],
   globals: {
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly',
     nodecg: 'readonly',
     NodeCG: 'readonly',
   },
@@ -26,11 +19,18 @@ module.exports = {
     'vue',
     '@typescript-eslint',
   ],
+  extends: [
+    'airbnb-base',
+    'plugin:vue/recommended',
+    'eslint:recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:import/typescript',
+  ],
   rules: {
-    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
-    'no-unused-vars': ['off'],
-    '@typescript-eslint/no-unused-vars': ['error'],
-    'vue/html-self-closing': ['error', { html: { component: 'never' } }],
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true, packageDir: ['.', '../..'] }],
     'no-new': ['off'],
-  },
+    'vue/html-self-closing': ['error', { html: { component: 'never' } }],
+    'vue/no-parsing-error': 'off', // Due to some issue in typescript-eslint(?), off for now.
+  }
 };
