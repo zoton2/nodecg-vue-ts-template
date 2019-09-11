@@ -32,8 +32,8 @@
   "devDependencies": {
     "@mdi/font": "^4.3.95",
     "@types/clone": "^0.1.30",
-    "@typescript-eslint/eslint-plugin": "^2.1.0",
-    "@typescript-eslint/parser": "^2.1.0",
+    "@typescript-eslint/eslint-plugin": "^2.2.0",
+    "@typescript-eslint/parser": "^2.2.0",
     "@vue/component-compiler-utils": "^3.0.0",
     "cross-env": "^5.2.1",
     "eslint": "^6.3.0",
