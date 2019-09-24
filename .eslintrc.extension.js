@@ -14,4 +14,11 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:import/typescript',
   ],
+  rules: {
+    'import/no-extraneous-dependencies': ['error', {
+      devDependencies: true, // Some places have dev deps imported where eslint complains.
+      packageDir: ['.', '../..'], // Check for deps in NodeCG folder as well.
+    }],
+    'max-len': ["error", { "code": 100 }],
+  },
 };

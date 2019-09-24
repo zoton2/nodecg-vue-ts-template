@@ -28,9 +28,15 @@ module.exports = {
     'plugin:import/typescript',
   ],
   rules: {
-    'import/no-extraneous-dependencies': ['error', { devDependencies: true, packageDir: ['.', '../..'] }],
-    'no-new': ['off'],
-    'vue/html-self-closing': ['error', { html: { component: 'never' } }],
+    'import/no-extraneous-dependencies': ['error', {
+      devDependencies: true, // Some places have dev deps imported where eslint complains.
+      packageDir: ['.', '../..'], // Check for deps in NodeCG folder as well.
+    }],
+    'vue/html-self-closing': ['error', {
+      html: {
+        component: 'never', // Transpiler(?) has issues with self closing components.
+      },
+    }],
     'vue/no-parsing-error': 'off', // Due to some issue in typescript-eslint(?), off for now.
   }
 };
