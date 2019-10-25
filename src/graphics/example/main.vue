@@ -1,5 +1,5 @@
 <template>
-  <div id="App">
+  <div>
     {{ text }}
   </div>
 </template>
@@ -15,9 +15,3 @@ export default Vue.extend({
   },
 });
 </script>
-
-<style>
-  #App {
-    color: green;
-  }
-</style>

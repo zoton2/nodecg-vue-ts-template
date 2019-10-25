@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import clone from 'clone';
-import { ReplicantBrowser } from 'nodecg/types/browser'; // eslint-disable-line
+import { ReplicantBrowser } from 'nodecg/types/browser'; // eslint-disable-line import/no-unresolved
 import Vue from 'vue';
 import Vuex, { Store } from 'vuex';
 

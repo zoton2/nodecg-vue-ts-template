@@ -1,3 +1,7 @@
 {
-  "extends": "../../tsconfig.browser.json"
+  "extends": "../../tsconfig.browser.json",
+  "include": [
+    "**/*.ts",
+    "**/*.vue"
+  ]
 }
