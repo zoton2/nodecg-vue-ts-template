@@ -5,13 +5,10 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-
-export default Vue.extend({
-  data() {
-    return {
-      text: 'Example',
-    };
-  },
-});
+import { Vue, Component } from 'vue-property-decorator';
+// import { State, Mutation } from 'vuex-class';
+@Component
+export default class App extends Vue {
+  text = 'Example';
+}
 </script>

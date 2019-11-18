@@ -38,6 +38,7 @@ module.exports = {
       },
     }],
     'max-len': ["error", { "code": 100 }],
+    'lines-between-class-members': 'off',
     // I legit think the 5 things below are broken, might be a typescript-eslint issue.
     'vue/no-parsing-error': 'off',
     'vue/valid-v-on': 'off',
