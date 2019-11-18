@@ -1,5 +1,5 @@
 import clone from 'clone';
-import { ReplicantBrowser } from 'nodecg/types/browser'; // eslint-disable-line import/no-unresolved
+import { ReplicantBrowser } from 'nodecg/types/browser';
 import Vue from 'vue';
 import Vuex, { Store } from 'vuex';
 
