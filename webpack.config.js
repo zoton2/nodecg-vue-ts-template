@@ -77,7 +77,7 @@ const config = (name) => {
       filename: 'js/[name].js',
     },
     resolve: {
-      extensions: ['.js', '.json'],
+      extensions: ['.js', '.ts', '.tsx', '.json'],
       alias: {
         vue: 'vue/dist/vue.esm.js',
       },
