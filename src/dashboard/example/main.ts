@@ -1,14 +1,14 @@
 /* eslint no-new: off, @typescript-eslint/explicit-function-return-type: off */
 
 import Vue from 'vue';
-import { create } from '../../browser_shared/replicant-store';
 import vuetify from '../_misc/vuetify';
 import App from './main.vue';
+import waitForReplicants from './store';
 
-create().then((store) => {
+waitForReplicants().then((store) => {
   new Vue({
-    store,
     vuetify,
+    store,
     el: '#App',
     render: (h) => h(App),
   });
