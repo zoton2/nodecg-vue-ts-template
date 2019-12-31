@@ -9,7 +9,7 @@ import { Vue, Component } from 'vue-property-decorator';
 // import { State, Mutation } from 'vuex-class';
 
 @Component
-export default class App extends Vue {
+export default class extends Vue {
   text = 'Example';
 }
 </script>
