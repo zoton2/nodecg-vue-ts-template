@@ -123,6 +123,7 @@ const config = (name) => {
           loader: 'file-loader',
           options: {
             name: 'img/[name]-[contenthash].[ext]',
+            esModule: false,
           },
         },
         {
