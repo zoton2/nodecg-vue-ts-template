@@ -13,18 +13,18 @@
   "license": "MIT",
   "author": "zoton2",
   "scripts": {
-    "autofix": "npx run-s autofix:*",
-    "autofix:browser": "npx eslint --fix --ext .ts,.vue src/dashboard && npx eslint --fix --ext .ts,.vue src/graphics && npx eslint --fix --ext .ts src/browser_shared",
-    "autofix:extension": "npx eslint --fix --ext .ts src/extension",
-    "build": "npx run-s build:*",
-    "build:browser": "npx cross-env NODE_ENV=production npx webpack",
-    "build:extension": "npx tsc -b tsconfig.extension.json",
-    "clean": "npx trash node_modules/.cache && npx trash dashboard && npx trash graphics && npx trash extension",
+    "autofix": "run-s autofix:*",
+    "autofix:browser": "eslint --fix --ext .ts,.vue src/dashboard && eslint --fix --ext .ts,.vue src/graphics && eslint --fix --ext .ts src/browser_shared",
+    "autofix:extension": "eslint --fix --ext .ts src/extension",
+    "build": "run-s build:*",
+    "build:browser": "cross-env NODE_ENV=production webpack",
+    "build:extension": "tsc -b tsconfig.extension.json",
+    "clean": "trash node_modules/.cache && trash dashboard && trash graphics && trash extension",
     "start": "node ../..",
     "typeschemas": "node script/typeschemas.js",
-    "watch": "npx run-p watch:*",
-    "watch:browser": "npx webpack -w",
-    "watch:extension": "npx tsc -b tsconfig.extension.json -w"
+    "watch": "run-p watch:*",
+    "watch:browser": "webpack -w",
+    "watch:extension": "tsc -b tsconfig.extension.json -w"
   },
   "devDependencies": {
     "@mdi/font": "^4.7.95",
