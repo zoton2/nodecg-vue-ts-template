@@ -116,10 +116,25 @@ const config = (name) => {
           loader: 'file-loader',
           options: {
             name: 'font/[name].[ext]',
+            esModule: false,
+          },
+        },
+        {
+          test: /\.svg?$/,
+          include: [
+            path.resolve(__dirname, `src/${name}/_misc/fonts`),
+          ],
+          loader: 'file-loader',
+          options: {
+            name: 'font/[name].[ext]',
+            esModule: false,
           },
         },
         {
           test: /\.(png|svg)?$/,
+          exclude: [
+            path.resolve(__dirname, `src/${name}/_misc/fonts`),
+          ],
           loader: 'file-loader',
           options: {
             name: 'img/[name]-[contenthash].[ext]',
