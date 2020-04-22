@@ -1,5 +1,5 @@
 import clone from 'clone';
-import { ReplicantBrowser } from 'nodecg/types/browser';
+import type { ReplicantBrowser } from 'nodecg/types/browser';
 import Vue from 'vue';
 import Vuex, { Store } from 'vuex';
 
