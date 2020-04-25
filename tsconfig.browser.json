@@ -75,7 +75,6 @@
     "src/dashboard/**/*.ts",
     "src/dashboard/**/*.vue",
     "src/graphics/**/*.ts",
-    "src/graphics/**/*.vue",
-    "../../types/browser.d.ts"
+    "src/graphics/**/*.vue"
   ]
 }
