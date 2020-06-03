@@ -39,8 +39,7 @@ Object.keys(reps).forEach((key) => {
   });
 });
 
-export default async function (): Promise<Store<{}>> {
-  return NodeCG.waitForReplicants(
-    ...Object.keys(reps).map((key) => reps[key]),
-  ).then(() => store);
-}
+export default async (): Promise<Store<Record<string, unknown>>> => {
+  await NodeCG.waitForReplicants(...Object.keys(reps).map((key) => reps[key]));
+  return store;
+};
