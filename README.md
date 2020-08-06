@@ -10,7 +10,7 @@ Template for NodeCG bundles that use Vue.js and TypeScript.
   - Includes *Vuex* and some example files for using it with replicants.
   - Dashboard also includes *Vuetify*, for easy styling of UI.
   - Builds using *webpack*.
-- *ESLint* is included for extension/browser/types.
+- *ESLint* is included for extension/browser/typings.
   - Extends [airbnb-base](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb-base), alongside a few other recommended packages.
   - Has some personal choices/override rules, but not many.
 - I personally use *Visual Studio Code* with some appropriate extensions, so have made sure it works well in that editor.
@@ -22,11 +22,11 @@ Template for NodeCG bundles that use Vue.js and TypeScript.
 - `autofix`: Automatically fix any possible linting errors using ESLint.
 - `autofix:browser`: See above, but only for browser based code.
 - `autofix:extension`: See above, but only for extension based code.
-- `autofix:types`: See above, but only for type files in the `types` directory.
+- `autofix:types`: See above, but only for typings in the `types` directory.
 - `build`: Build written code for use in production.
 - `build:browser`: See above, but only for browser based code.
 - `build:extension`: See above, but only for extension based code.
-- `clean`: Clean up all build/watched files.
+- `clean`: Clean up all built/watched files.
 - `start`: Start NodeCG.
 - `typeschemas`: Create TypeScript typings of anything in the `schemas` directory, and also the `Configschema.json` if it exists.
 - `watch`: Build code and watch for changes, for use in development.
