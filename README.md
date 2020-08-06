@@ -22,6 +22,7 @@ Template for NodeCG bundles that use Vue.js and TypeScript.
 - `autofix`: Automatically fix any possible linting errors using ESLint.
 - `autofix:browser`: See above, but only for browser based code.
 - `autofix:extension`: See above, but only for extension based code.
+- `autofix:types`: See above, but only for type files in the `types` directory.
 - `build`: Build written code for use in production.
 - `build:browser`: See above, but only for browser based code.
 - `build:extension`: See above, but only for extension based code.
