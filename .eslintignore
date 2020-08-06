@@ -1,4 +1,9 @@
 .eslintrc.js
 .eslintrc.*.js
-types/**/*
+webpack.config.js
+dashboard/**/*
+extension/**/*
+graphics/**/*
+node_modules/**/*
+script/**/*
 schemas/**/*
