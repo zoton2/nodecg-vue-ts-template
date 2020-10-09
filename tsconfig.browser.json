@@ -48,10 +48,10 @@
         "src/*"
       ],
       "@/schemas": [
-        "schemas" /* NEEDS TESTING! */
+        "schemas"
       ],
       "@/configschema": [
-        "configschema" /* NEEDS TESTING! */
+        "configschema"
       ],
       "nodecg/*": [
         "../../*"
