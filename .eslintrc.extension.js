@@ -1,3 +1,7 @@
+/**
+ * Some stuff is commented out that may need re-enabling if necessary.
+ */
+
 module.exports = {
   root: true,
   env: {
