@@ -1,6 +1,3 @@
 {
-  "extends": "../../tsconfig.browser.json",
-  "exclude": [
-    "../dashboard/**/*"
-  ]
+  "extends": "../../tsconfig.browser.json"
 }

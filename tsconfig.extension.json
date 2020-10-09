@@ -46,7 +46,7 @@
     "paths": {
       "*": [
         "node_modules/*",
-        "types/*",
+        "src/types/*",
         "*"
       ],
       "nodecg/*": [
