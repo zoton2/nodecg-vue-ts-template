@@ -4,7 +4,8 @@
   "additionalProperties": false,
   "properties": {
     "exampleProperty": {
-      "type": "string"
+      "type": "string",
+      "default": "exampleString"
     }
   },
   "required": [
