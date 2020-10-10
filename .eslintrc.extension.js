@@ -15,49 +15,49 @@ module.exports = {
     '@typescript-eslint',
   ],
   extends: [
-    'airbnb-base',
+    'airbnb-typescript/base',
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:import/typescript',
   ],
   settings: {
-    'import/core-modules': ['nodecg/types/server'],
-    'import/extensions': ['.js', '.jsx', '.ts', '.tsx'],
     'import/resolver': {
       typescript: {
-        // intentionally left blank
+        // This is needed to properly resolve paths.
+        project: 'tsconfig.extension.json',
       },
-      /* node: {
-        moduleDirectory: [
-          'node_modules',
-          '../..',
-          '.',
-        ],
-      }, */
     },
+    // 'import/extensions': ['.js', '.jsx', '.ts', '.tsx'],
   },
   rules: {
-    'import/extensions': ['error', 'ignorePackages', {
+    'import/no-extraneous-dependencies': ['error', {
+      // Some places have dev dependencies imported where eslint complains.
+      // devDependencies: true,
+      // Check for dependencies in NodeCG folder as well.
+      packageDir: ['.', '../..'],
+    }],
+    'lines-between-class-members': 'off',
+    // max-len set to ignore "import" lines (as they usually get long and messy).
+    'max-len': ['error', { code: 100, ignorePattern: '^import\\s.+\\sfrom\\s.+;$' }],
+    // I mainly have this off as it ruins auto import sorting in VSCode.
+    'object-curly-newline': 'off',
+    /* 'import/extensions': ['error', 'ignorePackages', {
       js: 'never',
       jsx: 'never',
       ts: 'never',
       tsx: 'never',
-    }],
-    'import/no-extraneous-dependencies': ['error', {
-      // devDependencies: true, // Some places have dev deps imported where eslint complains.
-      packageDir: ['.', '../..'], // Check for deps in NodeCG folder as well.
-    }],
+    }], */
     // 'import/no-unresolved': [2, { commonjs: true, caseSensitive: false }],
-    'max-len': ['error', { code: 100, ignorePattern: '^import\\s.+\\sfrom\\s.+;$' }],
-    'lines-between-class-members': 'off',
-    'object-curly-newline': 'off',
   },
+
+  // Overrides for types.
   overrides: [{
-    files: ['*.d.ts'],
+    files: ['**/*.d.ts'],
     rules: {
-      // The core 'no-unused-vars' rules (in the eslint:recommeded ruleset)
-      // does not work with type definitions
-      'no-unused-vars': 'off',
+      // @typescript-eslint/no-unused-vars does not work with type definitions
+      '@typescript-eslint/no-unused-vars': 'off',
+      // Sometimes eslint complains about this for types (usually when using namespaces).
+      'import/prefer-default-export': 'off',
     }
-  }]
+  }],
 };
