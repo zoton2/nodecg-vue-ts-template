@@ -98,6 +98,6 @@
     ]
   },
   "_moduleAliases": {
-    "@": "dist"
+    "@": "extension"
   }
 }
