@@ -1,0 +1,7 @@
+/*
+  This is to fix a dumb issue where the VSCode Vetur extension will only look for this file.
+  Hopefully it doesn't ruin anything else that then also looks for this exact file.
+*/
+{
+  "extends": "./tsconfig.browser.json"
+}

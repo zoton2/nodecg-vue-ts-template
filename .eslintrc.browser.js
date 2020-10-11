@@ -13,54 +13,55 @@ module.exports = {
   parser: 'vue-eslint-parser',
   parserOptions: {
     parser: '@typescript-eslint/parser',
-    // project: 'tsconfig.browser.json',
-    // sourceType: 'module',
+    project: 'tsconfig.browser.json',
     extraFileExtensions: ['.vue'],
     ecmaVersion: 2020,
+    // sourceType: 'module',
   },
   globals: {
     nodecg: 'readonly',
     NodeCG: 'readonly',
   },
   plugins: [
-    // 'vue',
     '@typescript-eslint',
+    // 'vue',
   ],
   extends: [
     'plugin:vue/essential',
+    // 'airbnb-base',
+    'airbnb-typescript/base',
     'eslint:recommended',
-    'airbnb-base',
     'plugin:@typescript-eslint/recommended',
-    // 'plugin:import/typescript',
+    'plugin:import/typescript',
   ],
   settings: {
-    'import/core-modules': ['nodecg/types/browser'],
-    'import/extensions': ['.js', '.jsx', '.ts', '.tsx'],
     'import/resolver': {
       typescript: {
-        // intentionally left blank
-      },
-      node: {
-        /* moduleDirectory: [
-          'node_modules',
-          '../..',
-          '.',
-        ], */
+        // This is needed to properly resolve paths.
+        project: 'tsconfig.browser.json',
       },
       webpack: {
         config: path.join(__dirname, 'webpack.config.js'),
       },
     },
+    'import/extensions': ['.js', '.jsx', '.ts', '.tsx'],
   },
   rules: {
-    // this rule, if on, would require explicit return type on the `render` function
-    '@typescript-eslint/explicit-function-return-type': 'off',
-    'import/extensions': ['error', 'ignorePackages', {
-      js: 'never',
-      jsx: 'never',
-      ts: 'never',
-      tsx: 'never',
+    'import/no-extraneous-dependencies': ['error', {
+      // Some places have dev dependencies imported where eslint complains.
+      // devDependencies: true,
+      // Check for dependencies in NodeCG folder as well.
+      packageDir: ['.', '../..'],
     }],
+    // This rule, if on, would require explicit return type on the 'render' function.
+    '@typescript-eslint/explicit-function-return-type': 'off',
+     // max-len set to ignore "import" lines (as they usually get long and messy).
+    'max-len': ['error', { code: 100, ignorePattern: '^import\\s.+\\sfrom\\s.+;$' }],
+     // I mainly have this off as it ruins auto import sorting in VSCode.
+    'object-curly-newline': 'off',
+    'lines-between-class-members': 'off',
+    'vue/html-self-closing': ['error'],
+    'class-methods-use-this': 'off',
     'no-param-reassign': ['error', {
       props: true,
       ignorePropertyModificationsFor: [
@@ -69,15 +70,12 @@ module.exports = {
         'e', // for e.returnvalue
       ],
     }],
-    'import/no-extraneous-dependencies': ['error', {
-      // devDependencies: true, // Some places have dev deps imported where eslint complains.
-      packageDir: ['.', '../..'], // Check for deps in NodeCG folder as well.
+    'import/extensions': ['error', 'ignorePackages', {
+      js: 'never',
+      jsx: 'never',
+      ts: 'never',
+      tsx: 'never',
     }],
     // 'import/no-unresolved': [2, { commonjs: true, caseSensitive: false }],
-    'max-len': ['error', { code: 100, ignorePattern: '^import\\s.+\\sfrom\\s.+;$' }],
-    'lines-between-class-members': 'off',
-    'vue/html-self-closing': ['error'],
-    'class-methods-use-this': 'off',
-    'object-curly-newline': 'off',
   }
 };

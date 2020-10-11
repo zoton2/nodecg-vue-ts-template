@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
 const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 const LiveReloadPlugin = require('webpack-livereload-plugin');
+const TsConfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const globby = require('globby');
 const path = require('path');
 
@@ -45,7 +46,7 @@ const config = (name) => {
             filename: `${entryName}.html`,
             chunks: [entryName],
             title: entryName,
-            template: './template.html',
+            template: 'template.html',
           }),
       ),
       new ForkTsCheckerWebpackPlugin({
@@ -66,7 +67,7 @@ const config = (name) => {
   }
   if (name === 'dashboard') {
     plugins.push(    
-      new VuetifyLoaderPlugin()
+      new VuetifyLoaderPlugin(),
     );
   }
 
@@ -85,6 +86,11 @@ const config = (name) => {
       alias: {
         vue: 'vue/dist/vue.esm.js',
       },
+      plugins: [
+        new TsConfigPathsPlugin({
+          configFile: 'tsconfig.browser.json',
+        }),
+      ],
     },
     module: {
       rules: [
