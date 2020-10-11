@@ -5,12 +5,16 @@ require('module-alias').addAlias('@', require('path').join(__dirname, '.'));
 
 import type { Configschema } from '@/configschema';
 import type { ExampleType } from '@/types';
+import { set } from '@/util/nodecg';
+import { exampleReplicant } from '@/util/replicants';
 import type { NodeCG } from 'nodecg/types/server';
-import { set } from './util/nodecg';
 
 export = (nodecg: NodeCG): void => {
   set(nodecg);
   nodecg.log.info('Extension code working!');
+
+  // Access/set a replicant (also see ./util/replicants).
+  exampleReplicant.value = { exampleProperty: `exampleString_Changed_${Date.now()}` };
 
   // Access the bundle configuration with types.
   const config = nodecg.bundleConfig as Configschema;
