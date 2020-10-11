@@ -27,7 +27,7 @@ module.exports = {
         project: 'tsconfig.extension.json',
       },
     },
-    // 'import/extensions': ['.js', '.jsx', '.ts', '.tsx'],
+    'import/extensions': ['.js', '.jsx', '.ts', '.tsx'],
   },
   rules: {
     'import/no-extraneous-dependencies': ['error', {
@@ -41,12 +41,12 @@ module.exports = {
     'max-len': ['error', { code: 100, ignorePattern: '^import\\s.+\\sfrom\\s.+;$' }],
     // I mainly have this off as it ruins auto import sorting in VSCode.
     'object-curly-newline': 'off',
-    /* 'import/extensions': ['error', 'ignorePackages', {
+    'import/extensions': ['error', 'ignorePackages', {
       js: 'never',
       jsx: 'never',
       ts: 'never',
       tsx: 'never',
-    }], */
+    }],
     // 'import/no-unresolved': [2, { commonjs: true, caseSensitive: false }],
   },
 
