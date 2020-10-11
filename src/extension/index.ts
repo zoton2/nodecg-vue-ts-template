@@ -3,9 +3,9 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 require('module-alias').addAlias('@', require('path').join(__dirname, '.'));
 
-import { Configschema } from '@/configschema';
-import { ExampleReplicant } from '@/schemas';
-import { ExampleType } from '@/types';
+import type { Configschema } from '@/configschema';
+import type { ExampleReplicant } from '@/schemas';
+import type { ExampleType } from '@/types';
 import type { NodeCG } from 'nodecg/types/server';
 import { set } from './util/nodecg';
 

@@ -1,3 +1,4 @@
+import type { ExampleReplicant } from '@/schemas';
 import clone from 'clone';
 import type { ReplicantBrowser } from 'nodecg/types/browser';
 import Vue from 'vue';
@@ -7,26 +8,26 @@ Vue.use(Vuex);
 
 // Replicants and their types
 const reps: {
-  replicantName: ReplicantBrowser<any>;
+  exampleReplicant: ReplicantBrowser<ExampleReplicant>;
   [k: string]: ReplicantBrowser<unknown>;
 } = {
-  replicantName: nodecg.Replicant('replicantName'),
+  exampleReplicant: nodecg.Replicant('exampleReplicant'),
 };
 
 // Types for mutations below
 export type ExampleMutation = (arg: any) => void;
 
-const store = new Vuex.Store({
+const store = new Store({
   state: {},
   mutations: {
     setState(state, { name, val }): void {
       Vue.set(state, name, val);
     },
     /* Mutations to replicants start */
-    exampleMutation(arg): void {
+    exampleMutation(arg: any): void {
       // You may need to do checks like these, depending on mutation content.
-      if (typeof reps.replicantName.value !== 'undefined') {
-        reps.replicantName.value = clone(arg);
+      if (typeof reps.exampleReplicant.value !== 'undefined') {
+        reps.exampleReplicant.value = clone(arg);
       }
     },
     /* Mutations to replicants end */

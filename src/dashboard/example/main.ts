@@ -1,7 +1,7 @@
 /* eslint no-new: off, @typescript-eslint/explicit-function-return-type: off */
 
+import vuetify from '@/_misc/vuetify';
 import Vue from 'vue';
-import vuetify from '../_misc/vuetify';
 import App from './main.vue';
 import waitForReplicants from './store';
 
