@@ -97,7 +97,8 @@
     "src/graphics/**/*.vue",
     "src/types/**/*.d.ts",
     "schemas/**.d.ts",
-    "configschema.d.ts"
+    "configschema.d.ts",
+    "../../types/**/*.d.ts"
   ],
   "exclude": [
     "node_modules"

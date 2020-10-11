@@ -36,7 +36,7 @@ module.exports = {
       // Check for dependencies in NodeCG folder as well.
       packageDir: ['.', '../..'],
     }],
-    'lines-between-class-members': 'off',
+    '@typescript-eslint/lines-between-class-members': 'off',
     // max-len set to ignore "import" lines (as they usually get long and messy).
     'max-len': ['error', { code: 100, ignorePattern: '^import\\s.+\\sfrom\\s.+;$' }],
     // I mainly have this off as it ruins auto import sorting in VSCode.

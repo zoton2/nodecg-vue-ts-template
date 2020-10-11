@@ -40,9 +40,13 @@ module.exports = {
         // This is needed to properly resolve paths.
         project: 'tsconfig.browser.json',
       },
-      webpack: {
+      /* 
+        fibers in webpack has an issue no "no binary", making this display
+        an annoying error in VSCode, so leaving off for now.
+      */
+      /* webpack: {
         config: path.join(__dirname, 'webpack.config.js'),
-      },
+      }, */
     },
     'import/extensions': ['.js', '.jsx', '.ts', '.tsx'],
   },
@@ -53,13 +57,11 @@ module.exports = {
       // Check for dependencies in NodeCG folder as well.
       packageDir: ['.', '../..'],
     }],
-    // This rule, if on, would require explicit return type on the 'render' function.
-    '@typescript-eslint/explicit-function-return-type': 'off',
      // max-len set to ignore "import" lines (as they usually get long and messy).
     'max-len': ['error', { code: 100, ignorePattern: '^import\\s.+\\sfrom\\s.+;$' }],
      // I mainly have this off as it ruins auto import sorting in VSCode.
     'object-curly-newline': 'off',
-    'lines-between-class-members': 'off',
+    '@typescript-eslint/lines-between-class-members': 'off',
     'vue/html-self-closing': ['error'],
     'class-methods-use-this': 'off',
     'no-param-reassign': ['error', {
