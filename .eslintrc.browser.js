@@ -41,7 +41,7 @@ module.exports = {
         project: 'tsconfig.browser.json',
       },
       /* 
-        fibers in webpack has an issue no "no binary", making this display
+        fibers in webpack has the issue "no binary", making this display
         an annoying error in VSCode, so leaving off for now.
       */
       /* webpack: {

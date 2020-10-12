@@ -11,7 +11,7 @@ export const reps: {
   exampleReplicant: ReplicantBrowser<ExampleReplicant>;
   [k: string]: ReplicantBrowser<unknown>;
 } = {
-  exampleReplicant: nodecg.Replicant<ExampleReplicant>('exampleReplicant'),
+  exampleReplicant: nodecg.Replicant('exampleReplicant'),
 };
 
 // All the replicant types.
