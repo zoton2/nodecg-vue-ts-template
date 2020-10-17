@@ -17,7 +17,7 @@ export default class extends Vue {
   text = 'Example';
 
   // If you want to read and write as if it was a variable, this works.
-  @replicantNS.State reps!: ReplicantTypes; // Read all replicants.
+  @replicantNS.State readonly reps!: ReplicantTypes; // Read all replicants.
   get exampleReplicant(): ExampleReplicant {
     return this.reps.exampleReplicant;
   }
@@ -32,7 +32,9 @@ export default class extends Vue {
   ) exampleReplicant!: ExampleReplicant; */
 
   // If you want to just read a replicant, you could do this.
-  // @replicantNS.State((state) => state.reps.exampleReplicant) exampleReplicant!: ExampleReplicant;
+  /* @replicantNS.State(
+    (state) => state.reps.exampleReplicant,
+  ) readonly exampleReplicant!: ExampleReplicant; */
 
   // Access the bundle configuration with types.
   config = nodecg.bundleConfig as Configschema;
