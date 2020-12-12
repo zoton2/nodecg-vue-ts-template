@@ -13,8 +13,7 @@ Template for NodeCG bundles that use Vue.js and TypeScript.
 - *ESLint* is included for extension/browser/typings.
   - Extends [airbnb-typescript/base](https://github.com/iamturns/eslint-config-airbnb-typescript), alongside a few other recommended/essential packages.
   - Has some personal choices/override rules, but not many.
-- I personally use *Visual Studio Code* with some appropriate extensions, so have made sure it works well in that editor.
-- `script/typeschemas.js` included to help you convert JSON schemas to *TypeScript* typings.
+- I personally use *Visual Studio Code* with some appropriate extensions ([Vetur](https://github.com/vuejs/vetur) for example), so have made sure it works well in that editor.
 - The extension/browser files have some example code scattered about that should help in how to use things.
 
 
