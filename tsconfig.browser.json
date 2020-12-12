@@ -54,11 +54,11 @@
         "src/graphics/*",
         "src/dashboard/*"
       ],
-      "@/schemas": [
-        "schemas"
+      "@/types": [
+        "src/types"
       ],
-      "@/configschema": [
-        "configschema"
+      "@/types/*": [
+        "src/types/*"
       ],
       "nodecg/*": [
         "../../*"

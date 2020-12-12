@@ -21,7 +21,7 @@
     "build:extension": "tsc -b tsconfig.extension.json",
     "clean": "trash node_modules/.cache && trash dashboard && trash graphics && trash extension",
     "start": "node ../..",
-    "typeschemas": "node script/typeschemas.js",
+    "schema-types": "nodecg schema-types",
     "watch": "run-p watch:*",
     "watch:browser": "webpack -w",
     "watch:extension": "tsc -b tsconfig.extension.json -w"
@@ -53,8 +53,8 @@
     "globby": "^11.0.1",
     "hard-source-webpack-plugin": "^0.13.1",
     "html-webpack-plugin": "^4.5.0",
-    "json-schema-to-typescript": "^10.0.0",
     "mini-css-extract-plugin": "^1.3.3",
+    "nodecg-cli": "^7.0.0",
     "npm-run-all": "^4.1.5",
     "sass": "^1.30.0",
     "sass-loader": "^10.1.0",

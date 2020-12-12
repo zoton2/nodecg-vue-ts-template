@@ -7,8 +7,8 @@
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
 import type { ExampleType } from '@/types';
-import type { ExampleReplicant } from '@/schemas';
-import type { Configschema } from '@/configschema';
+import type { ExampleReplicant } from '@/types/schemas';
+import type { Configschema } from '@/types/schemas/configschema';
 import { replicantModule, replicantNS, ReplicantTypes } from '@/browser_shared/replicant_store';
 // import { State2Way } from 'vuex-class-state2way';
 

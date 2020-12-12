@@ -1,4 +1,4 @@
-import type { ExampleReplicant } from '@/schemas';
+import type { ExampleReplicant } from '@/types/schemas';
 import clone from 'clone';
 import type { ReplicantBrowser } from 'nodecg/types/browser';
 import Vue from 'vue';

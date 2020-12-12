@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 
-import type { ExampleReplicant } from 'schemas';
+import type { ExampleReplicant } from '@/types/schemas';
 import { get as nodecg } from './nodecg';
 
 /**

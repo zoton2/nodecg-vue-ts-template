@@ -1,5 +1,5 @@
-import type { Configschema } from '@/configschema';
 import type { ExampleType } from '@/types';
+import type { Configschema } from '@/types/schemas/configschema';
 import { get as nodecg } from '@/util/nodecg';
 import { exampleReplicant } from '@/util/replicants';
 
