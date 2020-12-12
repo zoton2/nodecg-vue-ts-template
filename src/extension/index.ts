@@ -1,24 +1,18 @@
+/* eslint-disable global-require */
+
 // This must go first so we can use module aliases!
 /* eslint-disable import/first */
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 require('module-alias').addAlias('@', require('path').join(__dirname, '.'));
 
-import type { Configschema } from '@/configschema';
-import type { ExampleType } from '@/types';
 import { set } from '@/util/nodecg';
-import { exampleReplicant } from '@/util/replicants';
 import type { NodeCG } from 'nodecg/types/server';
 
 export = (nodecg: NodeCG): void => {
+  /**
+   * Because of how `import`s work, it helps to use `require`s to force
+   * things to be loaded *after* the NodeCG context is set.
+   */
   set(nodecg);
-  nodecg.log.info('Extension code working!');
-
-  // Access/set a replicant (also see ./util/replicants).
-  exampleReplicant.value = { exampleProperty: `exampleString_Changed_${Date.now()}` };
-
-  // Access the bundle configuration with types.
-  const config = nodecg.bundleConfig as Configschema;
-
-  // Accessing normal types.
-  const exampleType: ExampleType = { exampleProperty: 'exampleString' };
+  require('./example');
 };
