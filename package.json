@@ -16,7 +16,6 @@
     "autofix": "run-s autofix:*",
     "autofix:browser": "eslint --fix --ext .ts,.vue src/dashboard && eslint --fix --ext .ts,.vue src/graphics && eslint --fix --ext .ts src/browser_shared",
     "autofix:extension": "eslint --fix --ext .ts src/extension && eslint --fix --ext .d.ts src/types",
-    "autofix:types": "eslint --fix --ext .d.ts types",
     "build": "run-s build:*",
     "build:browser": "cross-env NODE_ENV=production webpack",
     "build:extension": "tsc -b tsconfig.extension.json",
