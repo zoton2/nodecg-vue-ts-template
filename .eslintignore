@@ -2,6 +2,7 @@
 .eslintrc.*.js
 configschema.d.ts
 webpack.config.js
+vetur.config.js
 dashboard/**/*
 extension/**/*
 graphics/**/*
