@@ -43,7 +43,7 @@ export default class extends Vue {
   exampleType: ExampleType = { exampleProperty: 'exampleString' };
 
   mounted(): void {
-    // If you are using State2Way or the getter/setting you could then do this.
+    // If you are using State2Way or the getter/setter you could then do this.
     this.exampleReplicant = { exampleProperty: `exampleString_Changed_${Date.now()}` };
   }
 }
