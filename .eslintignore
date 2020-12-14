@@ -1,10 +1,10 @@
 .eslintrc.js
 .eslintrc.*.js
-configschema.d.ts
 webpack.config.js
+vetur.config.js
 dashboard/**/*
 extension/**/*
 graphics/**/*
 node_modules/**/*
-script/**/*
 schemas/**/*
+src/types/schemas/**/*

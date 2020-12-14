@@ -1,11 +1,12 @@
 /* eslint no-new: off, @typescript-eslint/explicit-function-return-type: off */
 
+import { setUpReplicants } from '@/browser_shared/replicant_store';
+import vuetify from '@/_misc/vuetify';
 import Vue from 'vue';
-import vuetify from '../_misc/vuetify';
 import App from './main.vue';
-import waitForReplicants from './store';
+import store from './store';
 
-waitForReplicants().then((store) => {
+setUpReplicants(store).then(() => {
   new Vue({
     vuetify,
     store,

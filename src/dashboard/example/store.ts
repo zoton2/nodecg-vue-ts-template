@@ -1,45 +1,39 @@
+import { replicantModule, ReplicantModule, ReplicantTypes } from '@/browser_shared/replicant_store';
+import { ExampleReplicant } from '@/types/schemas';
 import clone from 'clone';
-import type { ReplicantBrowser } from 'nodecg/types/browser';
 import Vue from 'vue';
 import Vuex, { Store } from 'vuex';
+import { Action, getModule, Module, VuexModule } from 'vuex-module-decorators';
 
 Vue.use(Vuex);
 
-// Replicants and their types
-const reps: {
-  replicantName: ReplicantBrowser<any>;
-  [k: string]: ReplicantBrowser<unknown>;
-} = {
-  replicantName: nodecg.Replicant('replicantName'),
-};
+@Module({ name: 'OurModule' })
+class OurModule extends VuexModule {
+  // Helper getter to return all replicants.
+  get reps(): ReplicantTypes {
+    return this.context.rootState.ReplicantModule.reps;
+  }
 
-// Types for mutations below
-export type ExampleMutation = (arg: any) => void;
+  // Helper getter to return a specific replicant.
+  get exampleReplicant(): ExampleReplicant {
+    return this.reps.exampleReplicant;
+  }
 
-const store = new Vuex.Store({
+  // Action that uses the generic mutation in replicant_store.ts
+  // You could do anything here to successfully set a whole new value.
+  // Here, I clone the original and tweak one property on the object.
+  // You could also put this in the replicant_store.ts file if used repeatedly.
+  @Action
+  updateExampleReplicantProperty(str: string): void {
+    const val = { ...clone(this.exampleReplicant), ...{ exampleProperty: str } };
+    replicantModule.setReplicant<ExampleReplicant>({ name: 'exampleReplicant', val });
+  }
+}
+
+const store = new Store({
+  strict: process.env.NODE_ENV !== 'production',
   state: {},
-  mutations: {
-    setState(state, { name, val }): void {
-      Vue.set(state, name, val);
-    },
-    /* Mutations to replicants start */
-    exampleMutation(arg): void {
-      // You may need to do checks like these, depending on mutation content.
-      if (typeof reps.replicantName.value !== 'undefined') {
-        reps.replicantName.value = clone(arg);
-      }
-    },
-    /* Mutations to replicants end */
-  },
+  modules: { ReplicantModule, OurModule },
 });
-
-Object.keys(reps).forEach((key) => {
-  reps[key].on('change', (val) => {
-    store.commit('setState', { name: key, val: clone(val) });
-  });
-});
-
-export default async (): Promise<Store<Record<string, unknown>>> => {
-  await NodeCG.waitForReplicants(...Object.keys(reps).map((key) => reps[key]));
-  return store;
-};
+export default store;
+export const storeModule = getModule(OurModule, store);
