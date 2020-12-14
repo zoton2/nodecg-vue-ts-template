@@ -6,7 +6,7 @@ Template for NodeCG bundles that use Vue.js and TypeScript.
 
 - Extension uses *TypeScript*.
 - Browser uses *Vue.js*, with *TypeScript* for the scripting.
-  - *TypeScript* uses decorators, with [vue-class-component](https://github.com/vuejs/vue-class-component), [vue-property-decorator](https://github.com/kaorun343/vue-property-decorator), [vuex-module-decorators](https://github.com/championswimmer/vuex-module-decorators) and [vuex-class](https://github.com/ktsn/vuex-class)/[vuex-class-state2way](https://github.com/scleriot/vuex-class-state2way) to help (I chose these because in my experience it helped with correct typings while making Single File Components and such).
+  - *TypeScript* uses decorators, with [vue-class-component](https://github.com/vuejs/vue-class-component), [vue-property-decorator](https://github.com/kaorun343/vue-property-decorator), [vuex-module-decorators](https://github.com/championswimmer/vuex-module-decorators) and [vuex-class](https://github.com/ktsn/vuex-class) to help (I chose these because in my experience it helped with correct typings while making Single File Components and such).
   - Includes *Vuex* and a template file for using it with replicants ([`./src/browser_shared/replicant_store.ts`](src/browser_shared/replicant_store.ts)).
   - Dashboard also includes *Vuetify*, for easy styling of UI.
   - Builds using *webpack*.

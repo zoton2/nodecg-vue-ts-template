@@ -74,7 +74,6 @@
     "vuetify-loader": "^1.6.0",
     "vuex": "^3.6.0",
     "vuex-class": "^0.3.2",
-    "vuex-class-state2way": "^1.0.1",
     "vuex-module-decorators": "^1.0.1",
     "webpack": "^4.44.2",
     "webpack-cli": "^4.2.0",
