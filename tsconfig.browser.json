@@ -96,8 +96,6 @@
     "src/graphics/**/*.ts",
     "src/graphics/**/*.vue",
     "src/types/**/*.d.ts",
-    "schemas/**.d.ts",
-    "configschema.d.ts",
     "../../types/browser.d.ts"
   ],
   "exclude": [

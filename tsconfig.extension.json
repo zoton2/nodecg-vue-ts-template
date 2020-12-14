@@ -82,8 +82,6 @@
   "include": [
     "src/extension/**/*.ts",
     "src/types/**/*.d.ts",
-    "schemas/**.d.ts",
-    "configschema.d.ts",
     "../../types/server.d.ts"
   ],
   "exclude": [
