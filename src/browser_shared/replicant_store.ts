@@ -36,17 +36,6 @@ export class ReplicantModule extends VuexModule {
     Vue.set(this.reps, name, clone(val)); // Also update local copy, although no schema validation!
     reps[name].value = clone(val);
   }
-
-  // You can also set a specific replicant like this, which may be better in some cases.
-  @Mutation
-  setExampleReplicant(val: ExampleReplicant): void {
-    // You may need to do checks like these, depending on mutation content.
-    if (typeof reps.exampleReplicant.value !== 'undefined') {
-      // Also update local copy, although no schema validation!
-      Vue.set(this.reps, 'exampleReplicant', clone(val));
-      reps.exampleReplicant.value = clone(val);
-    }
-  }
 }
 
 // eslint-disable-next-line import/no-mutable-exports

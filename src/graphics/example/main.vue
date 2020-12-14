@@ -9,31 +9,18 @@ import { Vue, Component } from 'vue-property-decorator';
 import type { ExampleType } from '@/types';
 import type { ExampleReplicant } from '@/types/schemas';
 import type { Configschema } from '@/types/schemas/configschema';
-import { replicantModule, replicantNS, ReplicantTypes } from '@/browser_shared/replicant_store';
-// import { State2Way } from 'vuex-class-state2way';
+import { Getter } from 'vuex-class';
+// import { replicantNS } from '@/browser_shared/replicant_store';
+import { storeModule } from './store';
 
 @Component
 export default class extends Vue {
   text = 'Example';
+  @Getter readonly exampleReplicant!: ExampleReplicant; // from store.ts
 
-  // If you want to read and write as if it was a variable, this works.
-  @replicantNS.State readonly reps!: ReplicantTypes; // Read all replicants.
-  get exampleReplicant(): ExampleReplicant {
-    return this.reps.exampleReplicant;
-  }
-  set exampleReplicant(val: ExampleReplicant) {
-    replicantModule.setReplicant<ExampleReplicant>({ name: 'exampleReplicant', val });
-  }
-
-  // You can use State2Way as well, but it's more convoluted, and needs a specific mutation.
-  /* @State2Way(
-    'ReplicantModule/setExampleReplicant',
-    (state) => state.ReplicantModule.reps.exampleReplicant,
-  ) exampleReplicant!: ExampleReplicant; */
-
-  // If you want to just read a replicant, you could do this.
+  // If you want to just read a replicant without assigning a getter anywhere, you can do this too.
   /* @replicantNS.State(
-    (state) => state.reps.exampleReplicant,
+    (s) => s.reps.exampleReplicant,
   ) readonly exampleReplicant!: ExampleReplicant; */
 
   // Access the bundle configuration with types.
@@ -42,9 +29,9 @@ export default class extends Vue {
   // Accessing normal types.
   exampleType: ExampleType = { exampleProperty: 'exampleString' };
 
-  mounted(): void {
-    // If you are using State2Way or the getter/setter you could then do this.
-    this.exampleReplicant = { exampleProperty: `exampleString_Changed_${Date.now()}` };
+  created(): void {
+    // Call something from your store when you want to update a replicant.
+    storeModule.updateExampleReplicantProperty(`exampleString_Changed_${Date.now()}`);
   }
 }
 </script>
