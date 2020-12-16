@@ -20,8 +20,8 @@
     "build:browser": "cross-env NODE_ENV=production webpack",
     "build:extension": "tsc -b tsconfig.extension.json",
     "clean": "trash node_modules/.cache && trash dashboard && trash graphics && trash extension",
-    "start": "node ../..",
     "schema-types": "nodecg schema-types",
+    "start": "node ../..",
     "watch": "run-p watch:*",
     "watch:browser": "webpack -w",
     "watch:extension": "tsc -b tsconfig.extension.json -w"
