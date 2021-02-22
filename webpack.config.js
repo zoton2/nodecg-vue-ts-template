@@ -3,7 +3,6 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
-const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 const LiveReloadPlugin = require('webpack-livereload-plugin');
 const TsConfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const globby = require('globby');
@@ -37,7 +36,6 @@ const config = (name) => {
   }
   plugins = plugins.concat(
     [
-      new HardSourceWebpackPlugin(),
       new VueLoaderPlugin(),
       ...Object.keys(entry).map(
         (entryName) =>
@@ -132,33 +130,30 @@ const config = (name) => {
         },
         {
           test: /\.(woff(2)?|ttf|eot)$/,
-          loader: 'file-loader',
-          options: {
-            name: 'font/[name].[ext]',
-            esModule: false,
+          type: 'asset/resource',
+          generator: {
+            filename: 'font/[name][ext]',
           },
         },
         {
           test: /\.svg?$/,
+          type: 'asset/resource',
+          generator: {
+            filename: 'font/[name][ext]',
+          },
           include: [
             path.resolve(__dirname, `src/${name}/_misc/fonts`),
           ],
-          loader: 'file-loader',
-          options: {
-            name: 'font/[name].[ext]',
-            esModule: false,
-          },
         },
         {
           test: /\.(png|svg)?$/,
+          type: 'asset/resource',
+          generator: {
+            filename: 'img/[name]-[contenthash][ext]',
+          },
           exclude: [
             path.resolve(__dirname, `src/${name}/_misc/fonts`),
           ],
-          loader: 'file-loader',
-          options: {
-            name: 'img/[name]-[contenthash].[ext]',
-            esModule: false,
-          },
         },
         {
           test: /\.tsx?$/,
@@ -172,13 +167,14 @@ const config = (name) => {
     },
     plugins,
     optimization: (isProd) ? {
+      // v5 migration guide says to reconsider this, so maybe change in the future?
       splitChunks: {
         chunks: 'all',
         cacheGroups: {
           common: {
             minChunks: 2,
           },
-          vendors: false,
+          defaultVendors: false,
           default: false,
         },
       },

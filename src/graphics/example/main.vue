@@ -1,6 +1,8 @@
 <template>
   <div>
     {{ text }}
+    <br><br>
+    <img src="./image.png">
   </div>
 </template>
 

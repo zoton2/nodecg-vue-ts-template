@@ -1,6 +1,8 @@
 <template>
   <v-app>
     {{ text }}
+    <br><br>
+    <img src="./image.png">
   </v-app>
 </template>
 
