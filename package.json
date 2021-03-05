@@ -79,7 +79,7 @@
     "webpack-livereload-plugin": "^3.0.0"
   },
   "nodecg": {
-    "compatibleRange": "^1.7.1",
+    "compatibleRange": "^1.7.4",
     "dashboardPanels": [
       {
         "name": "example",

@@ -52,10 +52,8 @@ module.exports = {
   },
   rules: {
     'import/no-extraneous-dependencies': ['error', {
-      // Some places have dev dependencies imported where eslint complains.
-      // devDependencies: true,
-      // Check for dependencies in NodeCG folder as well.
-      packageDir: ['.', '../..'],
+      // Everything is compiled for thr browser so dev dependencies are fine.
+      devDependencies: true,
     }],
      // max-len set to ignore "import" lines (as they usually get long and messy).
     'max-len': ['error', { code: 100, ignorePattern: '^import\\s.+\\sfrom\\s.+;$' }],
