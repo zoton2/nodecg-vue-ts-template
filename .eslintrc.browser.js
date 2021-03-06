@@ -51,13 +51,11 @@ module.exports = {
     'import/extensions': ['.js', '.jsx', '.ts', '.tsx'],
   },
   rules: {
-    'import/no-extraneous-dependencies': ['error', {
-      // Everything is compiled for thr browser so dev dependencies are fine.
-      devDependencies: true,
-    }],
-     // max-len set to ignore "import" lines (as they usually get long and messy).
+    // Everything is compiled for the browser so dev dependencies are fine.
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    // max-len set to ignore "import" lines (as they usually get long and messy).
     'max-len': ['error', { code: 100, ignorePattern: '^import\\s.+\\sfrom\\s.+;$' }],
-     // I mainly have this off as it ruins auto import sorting in VSCode.
+    // I mainly have this off as it ruins auto import sorting in VSCode.
     'object-curly-newline': 'off',
     '@typescript-eslint/lines-between-class-members': 'off',
     'vue/html-self-closing': ['error'],
