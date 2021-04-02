@@ -16,6 +16,11 @@ Template for NodeCG bundles that use Vue.js and TypeScript.
 - I personally use *Visual Studio Code* with some appropriate extensions ([Vetur](https://github.com/vuejs/vetur) for example), so have made sure it works well in that editor.
 - The extension/browser files have some example code scattered about that should help in how to use things.
 
+To use module aliases, you must change all the parts labelled with `@nodecg-vue-ts-template`, either substitute in your own bundle name, or something else you feel is appropriate. The main places these are in are:
+- [`./tsconfig.browser.json`](tsconfig.browser.json)
+- [`./tsconfig.extension.json`](tsconfig.extension.json)
+- [`./src/extension/index.ts`](src/extension/index.ts)
+
 
 ## Package Commands
 
