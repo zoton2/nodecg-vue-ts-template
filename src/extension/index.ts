@@ -3,10 +3,10 @@
 // This must go first so we can use module aliases!
 /* eslint-disable import/first */
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-require('module-alias').addAlias('@', require('path').join(__dirname, '.'));
+require('module-alias').addAlias('@nodecg-vue-ts-template', require('path').join(__dirname, '.'));
 
-import { set } from '@/util/nodecg';
 import type { NodeCG } from 'nodecg/types/server';
+import { set } from './util/nodecg';
 
 export = (nodecg: NodeCG): void => {
   /**

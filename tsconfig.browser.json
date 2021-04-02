@@ -49,15 +49,15 @@
     "moduleResolution": "node",               /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */
     "baseUrl": ".",                           /* Base directory to resolve non-absolute module names. */
     "paths": {
-      "@/*": [
+      "@nodecg-vue-ts-template/*": [
         "src/*",
         "src/graphics/*",
         "src/dashboard/*"
       ],
-      "@/types": [
+      "@nodecg-vue-ts-template/types": [
         "src/types"
       ],
-      "@/types/*": [
+      "@nodecg-vue-ts-template/types/*": [
         "src/types/*"
       ],
       "nodecg/*": [

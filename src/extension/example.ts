@@ -1,7 +1,7 @@
-import type { ExampleType } from '@/types';
-import type { Configschema } from '@/types/schemas/configschema';
-import { get as nodecg } from '@/util/nodecg';
-import { exampleReplicant } from '@/util/replicants';
+import type { ExampleType } from '@nodecg-vue-ts-template/types';
+import type { Configschema } from '@nodecg-vue-ts-template/types/schemas/configschema';
+import { get as nodecg } from './util/nodecg';
+import { exampleReplicant } from './util/replicants';
 
 nodecg().log.info('Extension code working!');
 
