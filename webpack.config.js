@@ -64,7 +64,7 @@ const config = (name) => {
     );
   }
   if (name === 'dashboard') {
-    plugins.push(    
+    plugins.push(
       new VuetifyLoaderPlugin(),
     );
   }
