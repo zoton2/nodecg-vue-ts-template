@@ -1,6 +1,6 @@
 .eslintrc.js
 .eslintrc.*.js
-webpack.config.js
+webpack.config.mjs
 vetur.config.js
 dashboard/**/*
 extension/**/*

@@ -1,29 +1,24 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
-const LiveReloadPlugin = require('webpack-livereload-plugin');
-const TsConfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
-const globby = require('globby');
-const path = require('path');
+import fibers from 'fibers';
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
+import { globbySync } from 'globby';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import path from 'path';
+import sass from 'sass';
+import TsConfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
+import VueLoaderPlugin from 'vue-loader/lib/plugin.js';
+import VuetifyLoaderPlugin from 'vuetify-loader/lib/plugin.js';
+import LiveReloadPlugin from 'webpack-livereload-plugin';
 
 const isProd = process.env.NODE_ENV === 'production';
+const __dirname = path.resolve();
 
 const config = (name) => {
-  const entry = globby
-    .sync('*/main.ts', {cwd: `src/${name}`})
+  const entry = globbySync('*/main.ts', {cwd: `src/${name}`})
     .reduce((prev, curr) => {
       prev[path.basename(path.dirname(curr))] = `./${curr}`;
       return prev;
     }, {});
-
-  const miniCSSOpts = {
-    loader: MiniCssExtractPlugin.loader,
-    options: {
-      publicPath: '../',
-    },
-  };
 
   let plugins = [];
   if (!isProd) {
@@ -99,7 +94,7 @@ const config = (name) => {
         {
           test: /\.css$/,
           use: [
-            (isProd) ? miniCSSOpts : 'vue-style-loader',
+            (isProd) ? MiniCssExtractPlugin.loader : 'vue-style-loader',
             {
               loader: 'css-loader',
               options: {
@@ -111,7 +106,7 @@ const config = (name) => {
         {
           test: /\.s(c|a)ss$/,
           use: [
-            (isProd) ? miniCSSOpts : 'vue-style-loader',
+            (isProd) ? MiniCssExtractPlugin.loader : 'vue-style-loader',
             {
               loader: 'css-loader',
               options: {
@@ -121,9 +116,9 @@ const config = (name) => {
             {
               loader: 'sass-loader',
               options: {
-                implementation: require('sass'),
+                implementation: sass,
                 sassOptions: {
-                  fiber: require('fibers'),
+                  fiber: fibers,
                 },
               },
             },
@@ -183,7 +178,7 @@ const config = (name) => {
   };
 }
 
-module.exports = [
+export default [
   config('dashboard'),
   config('graphics'),
 ];
