@@ -33,7 +33,7 @@ To use module aliases, you must change all the parts labelled with `@nodecg-vue-
 - `build:extension`: See above, but only for extension based code.
 - `clean`: Clean up all built/watched files.
 - `start`: Start NodeCG.
-- `schema-types`: Create TypeScript typings for schemas/`Configschema.json` using `@zoton2/nodecg-cli`.
+- `schema-types`: Create TypeScript typings for schemas/`Configschema.json` using `nodecg-cli`.
 - `watch`: Build code and watch for changes, for use in development.
 - `watch:browser`: See above, but only for browser based code.
 - `watch:extension`: See above, but only for extension based code.

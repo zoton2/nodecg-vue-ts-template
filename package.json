@@ -38,7 +38,7 @@
     "@typescript-eslint/eslint-plugin": "^4.29.0",
     "@typescript-eslint/parser": "^4.29.0",
     "@vue/component-compiler-utils": "^3.2.2",
-    "@zoton2/nodecg-cli": "^7.1.0",
+    "nodecg-cli": "^8.0.0",
     "clone": "^2.1.2",
     "cross-env": "^7.0.3",
     "css-loader": "^6.2.0",
