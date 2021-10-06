@@ -28,7 +28,7 @@ module.exports = {
   ],
   extends: [
     'plugin:vue/essential',
-    // 'airbnb-base',
+    'airbnb-base',
     'airbnb-typescript/base',
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
