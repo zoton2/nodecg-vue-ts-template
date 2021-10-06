@@ -40,7 +40,7 @@ module.exports = {
         // This is needed to properly resolve paths.
         project: 'tsconfig.browser.json',
       },
-      /* 
+      /*
         fibers in webpack has the issue "no binary", making this display
         an annoying error in VSCode, so leaving off for now.
       */
