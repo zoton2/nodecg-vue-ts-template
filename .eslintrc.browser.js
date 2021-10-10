@@ -1,14 +1,9 @@
-/**
- * Some stuff is commented out that may need re-enabling if necessary.
- */
-
 const path = require('path');
 
 module.exports = {
   root: true,
   env: {
     node: true,
-    // es6: true,
   },
   parser: 'vue-eslint-parser',
   parserOptions: {
@@ -16,7 +11,6 @@ module.exports = {
     project: 'tsconfig.browser.json',
     extraFileExtensions: ['.vue'],
     ecmaVersion: 2020,
-    // sourceType: 'module',
   },
   globals: {
     nodecg: 'readonly',
@@ -24,7 +18,6 @@ module.exports = {
   },
   plugins: [
     '@typescript-eslint',
-    // 'vue',
   ],
   extends: [
     'plugin:vue/essential',
@@ -40,13 +33,9 @@ module.exports = {
         // This is needed to properly resolve paths.
         project: 'tsconfig.browser.json',
       },
-      /*
-        fibers in webpack has the issue "no binary", making this display
-        an annoying error in VSCode, so leaving off for now.
-      */
-      /* webpack: {
+      webpack: {
         config: path.join(__dirname, 'webpack.config.js'),
-      }, */
+      },
     },
     'import/extensions': ['.js', '.jsx', '.ts', '.tsx'],
   },
@@ -74,6 +63,5 @@ module.exports = {
       ts: 'never',
       tsx: 'never',
     }],
-    // 'import/no-unresolved': [2, { commonjs: true, caseSensitive: false }],
   }
 };
