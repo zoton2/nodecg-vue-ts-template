@@ -5,6 +5,7 @@ Template for NodeCG bundles that use Vue.js and TypeScript.
 
 ## Technical Details
 
+- Tested with Node.js v16 (as of writing, current LTS).
 - Extension uses *TypeScript*.
 - Browser uses *Vue.js (v2)*, with *TypeScript* for the scripting.
   - *TypeScript* uses decorators, with [vue-class-component](https://github.com/vuejs/vue-class-component), [vue-property-decorator](https://github.com/kaorun343/vue-property-decorator), [vuex-module-decorators](https://github.com/championswimmer/vuex-module-decorators) and [vuex-class](https://github.com/ktsn/vuex-class) to help (I chose these because in my experience it helped with correct typings while making Single File Components and such).
@@ -32,8 +33,8 @@ To use module aliases, you must change all the parts labelled with `@nodecg-vue-
 - `build:browser`: See above, but only for browser based code.
 - `build:extension`: See above, but only for extension based code.
 - `clean`: Clean up all built/watched files.
-- `start`: Start NodeCG.
 - `schema-types`: Create TypeScript typings for schemas/`Configschema.json` using `nodecg-cli`.
+- `start`: Start NodeCG.
 - `watch`: Build code and watch for changes, for use in development.
 - `watch:browser`: See above, but only for browser based code.
 - `watch:extension`: See above, but only for extension based code.

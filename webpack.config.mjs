@@ -1,4 +1,3 @@
-import fibers from 'fibers';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import { globbySync } from 'globby';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
@@ -117,9 +116,6 @@ const config = (name) => {
               loader: 'sass-loader',
               options: {
                 implementation: sass,
-                sassOptions: {
-                  fiber: fibers,
-                },
               },
             },
           ],
