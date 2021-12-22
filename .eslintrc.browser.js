@@ -34,7 +34,7 @@ module.exports = {
         project: 'tsconfig.browser.json',
       },
       webpack: {
-        config: path.join(__dirname, 'webpack.config.js'),
+        config: path.join(__dirname, 'webpack.config.mjs'),
       },
     },
     'import/extensions': ['.js', '.jsx', '.ts', '.tsx'],
