@@ -1,0 +1,20 @@
+/* Loads just the latin versions of Roboto. */
+@import url('@fontsource/roboto/latin.css');
+
+/* Loads all (I think) possible versions of Roboto. */
+/* You may want to narrow this down to make your projects smaller if you use this. */
+/* See: https://www.npmjs.com/package/@fontsource/roboto */
+/*
+@import url('@fontsource/roboto/100-italic.css');
+@import url('@fontsource/roboto/100.css');
+@import url('@fontsource/roboto/300-italic.css');
+@import url('@fontsource/roboto/300.css');
+@import url('@fontsource/roboto/400-italic.css');
+@import url('@fontsource/roboto/400.css');
+@import url('@fontsource/roboto/500-italic.css');
+@import url('@fontsource/roboto/500.css');
+@import url('@fontsource/roboto/700-italic.css');
+@import url('@fontsource/roboto/700.css');
+@import url('@fontsource/roboto/900-italic.css');
+@import url('@fontsource/roboto/900.css');
+*/
