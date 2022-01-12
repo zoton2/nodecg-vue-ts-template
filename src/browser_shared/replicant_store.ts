@@ -24,6 +24,10 @@ export class ReplicantModule extends VuexModule {
   // Replicant values are stored here.
   reps: { [k: string]: unknown } = {};
 
+  get repsTyped(): ReplicantTypes {
+    return this.reps as unknown as ReplicantTypes;
+  }
+
   // This sets the state object above when a replicant sends an update.
   @Mutation
   setState({ name, val }: { name: string, val: unknown }): void {
