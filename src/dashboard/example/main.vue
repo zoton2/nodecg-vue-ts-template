@@ -1,11 +1,13 @@
-<script lang="ts" setup>
+<script setup lang="ts">
 import { ref } from 'vue';
 
 const text = ref('Example');
 </script>
 
 <template>
-  {{ text }}
-  <br><br>
-  <img src="./image.png">
+  <div class="q-pa-md">
+    {{ text }}
+    <br><br>
+    <img src="./image.png" :style="{ width: '100%', display: 'block' }">
+  </div>
 </template>
