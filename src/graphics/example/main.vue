@@ -1,7 +1,13 @@
 <script lang="ts" setup>
-// CODE HERE
+import { ref } from 'vue';
+
+const text = ref('Example');
 </script>
 
 <template>
-  <div>Example</div>
+  <div>
+    {{ text }}
+    <br><br>
+    <img src="./image.png">
+  </div>
 </template>
