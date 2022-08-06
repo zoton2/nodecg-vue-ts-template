@@ -8,9 +8,7 @@ const text = ref('Example');
 </script>
 
 <template>
-  <div class="q-pa-md">
-    {{ text }}
-    <br><br>
-    <img src="./image.png" :style="{ width: '100%', display: 'block' }">
-  </div>
+  {{ text }}
+  <br><br>
+  <img src="./image.png" :style="{ width: '100%' }">
 </template>

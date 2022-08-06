@@ -8,9 +8,7 @@ const text = ref('Example');
 </script>
 
 <template>
-  <div>
-    {{ text }}
-    <br><br>
-    <img src="./image.png">
-  </div>
+  {{ text }}
+  <br><br>
+  <img src="./image.png">
 </template>
