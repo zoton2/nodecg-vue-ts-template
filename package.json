@@ -30,6 +30,7 @@
     "@quasar/extras": "^1.15.1",
     "@quasar/vite-plugin": "^1.1.1",
     "@vitejs/plugin-vue": "^2.3.3",
+    "@vueuse/head": "^0.7.9",
     "globby": "^13.1.2",
     "nodecg-cli": "^8.0.1",
     "nodecg-types": "^1.8.3",
