@@ -25,7 +25,9 @@ const exampleType: ExampleType = { exampleProperty: 'exampleString' };
 </script>
 
 <template>
-  {{ text }}
-  <br><br>
-  <img src="./image.png" :style="{ width: '100%' }">
+  <div>
+    {{ text }}
+    <br><br>
+    <img src="./image.png" :style="{ width: '100%' }">
+  </div>
 </template>

@@ -13,6 +13,9 @@
   "license": "MIT",
   "author": "zoton2",
   "scripts": {
+    "autofix": "run-s autofix:*",
+    "autofix:browser": "eslint --fix --ext .ts,.vue src/dashboard && eslint --fix --ext .ts,.vue src/graphics",
+    "autofix:extension": "eslint --fix --ext .ts src/extension && eslint --fix --ext .d.ts src/types",
     "build": "run-s clean build:*",
     "build:browser": "vite build",
     "build:extension": "tsc -b tsconfig.extension.json",
@@ -29,8 +32,17 @@
   "devDependencies": {
     "@quasar/extras": "^1.15.1",
     "@quasar/vite-plugin": "^1.1.1",
+    "@types/node": "^16.11.47",
+    "@typescript-eslint/eslint-plugin": "^5.32.0",
+    "@typescript-eslint/parser": "^5.32.0",
     "@vitejs/plugin-vue": "^2.3.3",
     "@vueuse/head": "^0.7.9",
+    "eslint": "^8.21.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-import-resolver-typescript": "^3.4.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-vue": "^9.3.0",
     "globby": "^13.1.2",
     "nodecg-cli": "^8.0.1",
     "nodecg-types": "^1.8.3",
@@ -43,6 +55,7 @@
     "vite-plugin-checker": "^0.4.9",
     "vite-plugin-nodecg": "^1.0.2",
     "vue": "^3.2.37",
+    "vue-eslint-parser": "^9.0.3",
     "vue-tsc": "^0.39.5"
   },
   "nodecg": {
