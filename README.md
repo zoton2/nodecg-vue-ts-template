@@ -11,6 +11,7 @@ Template for NodeCG bundles that use Vue.js and TypeScript.
   - Includes the [nodecg-vue-composable](https://github.com/Dan-Shields/nodecg-vue-composable) helper composable to help with using replicants; I advise you check it's README for more information.
   - Dashboard also includes Quasar, for easy styling of UI.
   - Builds using Vite, using the [vite-plugin-nodecg](https://github.com/dan-shields/vite-plugin-nodecg) plugin.
+- Includes module alias support for both extension and browser.
 - ESLint is included for extension/browser/typings.
   - Extends [airbnb-typescript/base](https://github.com/iamturns/eslint-config-airbnb-typescript), alongside a few other recommended/essential packages.
   - Has some personal choices/override rules, but not many.
