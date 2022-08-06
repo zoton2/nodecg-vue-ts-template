@@ -14,7 +14,7 @@ Template for NodeCG bundles that use Vue.js and TypeScript.
 - ESLint is included for extension/browser/typings.
   - Extends [airbnb-typescript/base](https://github.com/iamturns/eslint-config-airbnb-typescript), alongside a few other recommended/essential packages.
   - Has some personal choices/override rules, but not many.
-- I personally use Visual Studio Code with some appropriate extensions ([Volar](https://marketplace.visualstudio.com/items?itemName=Wscats.vue) for example), so have made sure it works well in that editor.
+- I personally use Visual Studio Code with some appropriate extensions ([Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) for example), so have made sure it works well in that editor.
 - The extension/browser files have some example code scattered about that should help in how to use things.
 
 To use module aliases, you must change all the parts labelled with `@nodecg-vue-ts-template`, either substitute in your own bundle name, or something else you feel is appropriate. The main places these are in are:
