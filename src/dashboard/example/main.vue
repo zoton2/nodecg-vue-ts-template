@@ -29,5 +29,7 @@ const exampleType: ExampleType = { exampleProperty: 'exampleString' };
     {{ text }}
     <br><br>
     <img src="./image.png" :style="{ width: '100%' }">
+    <br><br>
+    <QBtn color="primary" label="Example" />
   </div>
 </template>
