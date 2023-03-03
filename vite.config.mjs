@@ -14,12 +14,8 @@ const __dirname = dirname(__filename);
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    vue({
-      template: { transformAssetUrls },
-    }),
-    quasar({
-      autoImportComponentCase: 'pascal',
-    }),
+    vue({ template: { transformAssetUrls } }),
+    quasar({ autoImportComponentCase: 'pascal' }),
     checker({ vueTsc: { tsconfigPath: 'tsconfig.browser.json' } }),
     NodeCGPlugin(),
   ],
