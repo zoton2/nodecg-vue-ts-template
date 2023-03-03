@@ -34,6 +34,10 @@ To use module aliases, you must change all the parts labelled with `@nodecg-vue-
 - `build:browser`: See above, but only for browser based code.
 - `build:extension`: See above, but only for extension based code.
 - `clean`: Clean up all built/watched files.
+- `lint`: Finds any possible linting errors using ESLint, but does not fix them.
+- `lint:browser`: See above, but only for browser based code.
+- `lint:extension`: See above, but only for extension based code/typings.
+- `prebuild`: Alias for `clean`, will automatically run before `build` if called.
 - `schema-types`: Create TypeScript typings for schemas/`Configschema.json` using `nodecg-cli`.
 - `start`: Start NodeCG.
 - `watch`: Build code and watch for changes, for use in development.
