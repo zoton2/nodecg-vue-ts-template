@@ -21,7 +21,7 @@ Template for NodeCG bundles that use Vue.js and TypeScript.
 To use module aliases, you must change all the parts labelled with `@nodecg-vue-ts-template`; either substitute in your own bundle name, or something else you feel is appropriate. The main places these are in are:
 - [`./tsconfig.browser.json`](tsconfig.browser.json)
 - [`./tsconfig.extension.json`](tsconfig.extension.json)
-- [`./vite.config.mjs](vite.config.mjs)
+- [`./vite.config.mjs`](vite.config.mjs)
 - [`./src/extension/index.ts`](src/extension/index.ts)
 
 
