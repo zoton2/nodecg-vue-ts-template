@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ExampleType } from '@nodecg-vue-ts-template/types';
-import { Configschema, ExampleReplicant } from '@nodecg-vue-ts-template/types/schemas';
+import { ExampleReplicant } from '@nodecg-vue-ts-template/types/schemas';
 import { useHead } from '@vueuse/head';
 import { useReplicant } from 'nodecg-vue-composable';
 import { ref } from 'vue';
@@ -16,9 +16,6 @@ const exampleReplicant = useReplicant<ExampleReplicant>(
   'exampleReplicant',
   'nodecg-vue-ts-template',
 );
-
-// Access the bundle configuration with types.
-const config = nodecg.bundleConfig as Configschema;
 
 // Accessing normal types.
 const exampleType: ExampleType = { exampleProperty: 'exampleString' };
