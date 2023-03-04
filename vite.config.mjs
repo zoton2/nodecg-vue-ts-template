@@ -1,6 +1,5 @@
 import { quasar, transformAssetUrls } from '@quasar/vite-plugin';
 import vue from '@vitejs/plugin-vue';
-import { globbySync } from 'globby';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { defineConfig } from 'vite';
@@ -19,15 +18,6 @@ export default defineConfig({
     checker({ vueTsc: { tsconfigPath: 'tsconfig.browser.json' } }),
     NodeCGPlugin(),
   ],
-  build: {
-    rollupOptions: {
-      input: globbySync([
-        './src/dashboard/*.ts',
-        './src/graphics/*.ts',
-        '!**.d.ts',
-      ]),
-    },
-  },
   resolve: {
     alias: {
       '@nodecg-vue-ts-template': `${__dirname}/src/`,
