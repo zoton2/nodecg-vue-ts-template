@@ -114,4 +114,8 @@
     "src/extension/**/*.ts",
     "src/types/**/*.d.ts"
   ],
+  "exclude": [
+    "node_modules",
+    "src/types/augment-window.d.ts"
+  ]
 }
