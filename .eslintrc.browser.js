@@ -2,7 +2,6 @@ module.exports = {
   root: true,
   env: {
     node: true,
-    // 'vue/setup-compiler-macros': true,
   },
   parser: 'vue-eslint-parser',
   parserOptions: {
