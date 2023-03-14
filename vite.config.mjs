@@ -12,6 +12,9 @@ const __dirname = dirname(__filename);
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  server: {
+    port: 5173, // Temp workaround for vite-plugin-nodecg having the wrong default
+  },
   plugins: [
     vue({ template: { transformAssetUrls } }),
     quasar({ autoImportComponentCase: 'pascal' }),
