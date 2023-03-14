@@ -21,7 +21,7 @@
     "build:browser": "vite build",
     "build:extension": "tsc -b tsconfig.extension.json",
     "clean": "trash node_modules/.cache && trash shared/dist && trash dashboard && trash graphics && trash extension",
-    "lint": "run-s autofix:*",
+    "lint": "run-s lint:*",
     "lint:browser": "eslint --ext .ts,.vue src/dashboard && eslint --ext .ts,.vue src/graphics",
     "lint:extension": "eslint --ext .ts src/extension && eslint --ext .d.ts src/types",
     "schema-types": "nodecg schema-types",
