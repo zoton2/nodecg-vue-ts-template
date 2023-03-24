@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   root: true,
   env: {
@@ -6,7 +8,7 @@ module.exports = {
   parser: 'vue-eslint-parser',
   parserOptions: {
     parser: '@typescript-eslint/parser',
-    project: 'tsconfig.browser.json',
+    project: path.join(__dirname, 'tsconfig.browser.json'),
     extraFileExtensions: ['.vue'],
   },
   globals: {
@@ -28,7 +30,7 @@ module.exports = {
     'import/resolver': {
       typescript: {
         // This is needed to properly resolve paths.
-        project: 'tsconfig.browser.json',
+        project: path.join(__dirname, 'tsconfig.browser.json'),
       },
     },
     'import/extensions': ['.js', '.jsx', '.ts', '.tsx'],
