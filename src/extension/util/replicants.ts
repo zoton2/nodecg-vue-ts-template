@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 
-import type NodeCG from '@alvancamp/test-nodecg-types';
 import type { ExampleReplicant } from '@nodecg-vue-ts-template/types/schemas';
+import type NodeCG from '@nodecg/types';
 import { get as nodecg } from './nodecg';
 
 /**

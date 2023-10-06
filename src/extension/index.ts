@@ -5,8 +5,8 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 require('module-alias').addAlias('@nodecg-vue-ts-template', require('path').join(__dirname, '.'));
 
-import type NodeCG from '@alvancamp/test-nodecg-types';
 import { Configschema } from '@nodecg-vue-ts-template/types/schemas';
+import type NodeCG from '@nodecg/types';
 import { set } from './util/nodecg';
 
 export = (nodecg: NodeCG.ServerAPI<Configschema>): void => {

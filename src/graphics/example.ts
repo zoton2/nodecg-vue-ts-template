@@ -1,4 +1,4 @@
-import { createHead } from '@vueuse/head';
+import { createHead } from '@unhead/vue';
 import { createApp } from 'vue';
 import App from './example/main.vue';
 
