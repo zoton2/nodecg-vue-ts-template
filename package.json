@@ -67,12 +67,12 @@
       {
         "name": "example",
         "title": "Example",
-        "file": "example.html"
+        "file": "example/main.html"
       }
     ],
     "graphics": [
       {
-        "file": "example.html",
+        "file": "example/main.html",
         "width": 1920,
         "height": 1080
       }
