@@ -22,7 +22,7 @@
     "build": "run-s build:*",
     "build:browser": "vite build",
     "build:extension": "tsc -b tsconfig.extension.json",
-    "clean:browser": "trash shared/dist && trash dashboard && trash graphics",
+    "clean:browser": "trash node_modules/.vite && trash shared/dist && trash dashboard && trash graphics",
     "clean:extension": "trash extension",
     "lint": "run-s lint:* -c",
     "lint:dashboard": "eslint --ext .ts,.vue src/dashboard",
