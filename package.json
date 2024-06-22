@@ -18,11 +18,12 @@
     "autofix:graphics": "eslint --fix --ext .ts,.vue src/graphics",
     "autofix:extension": "eslint --fix --ext .ts src/extension",
     "autofix:types": "eslint --fix --ext .d.ts src/types",
-    "prebuild": "npm run clean",
+    "prebuild": "run-s clean:*",
     "build": "run-s build:*",
     "build:browser": "vite build",
     "build:extension": "tsc -b tsconfig.extension.json",
-    "clean": "trash node_modules/.cache && trash shared/dist && trash dashboard && trash graphics && trash extension",
+    "clean:browser": "trash shared/dist && trash dashboard && trash graphics",
+    "clean:extension": "trash extension",
     "lint": "run-s lint:* -c",
     "lint:dashboard": "eslint --ext .ts,.vue src/dashboard",
     "lint:graphics": "eslint --ext .ts,.vue src/graphics",
@@ -30,9 +31,9 @@
     "lint:types": "eslint --ext .d.ts src/types",
     "schema-types": "nodecg schema-types",
     "start": "node ../..",
-    "watch": "run-p watch:*",
-    "watch:browser": "vite",
-    "watch:extension": "tsc -b tsconfig.extension.json -w"
+    "watch": "npm run prebuild && run-p watch:*",
+    "watch:browser": "npm run clean:browser && vite",
+    "watch:extension": "npm run clean:extension && tsc -b tsconfig.extension.json -w"
   },
   "dependencies": {
     "module-alias": "^2.2.3"
