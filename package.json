@@ -62,7 +62,7 @@
     "vue-tsc": "^1.8.15"
   },
   "nodecg": {
-    "compatibleRange": "^1.9.0",
+    "compatibleRange": "^2.0.0",
     "dashboardPanels": [
       {
         "name": "example",
