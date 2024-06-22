@@ -5,7 +5,7 @@ import { createHead } from '@unhead/vue';
 import { Dark, Quasar } from 'quasar';
 import 'quasar/dist/quasar.css';
 import { createApp } from 'vue';
-import App from './example/main.vue';
+import App from './main.vue';
 
 const app = createApp(App);
 const head = createHead();
