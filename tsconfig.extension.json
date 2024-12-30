@@ -5,6 +5,7 @@
     "rootDir": "./src/extension",
     "outDir": "./extension",
     // "forceConsistentCasingInFileNames": true,
+    "verbatimModuleSyntax": true,
   },
   "include": [
     "./src/extension/**/*.ts",

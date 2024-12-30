@@ -1,12 +1,11 @@
-import type NodeCG from '@nodecg/types';
-import type { Configschema } from '../../types/schemas/configschema.js';
+import type { NodeCGServerAPI } from '../../types/index.js';
 
-let nodecg: NodeCG.default.ServerAPI<Configschema>;
+let nodecg: NodeCGServerAPI;
 
-export function set(ctx: NodeCG.default.ServerAPI<Configschema>): void {
+export function set(ctx: NodeCGServerAPI) {
   nodecg = ctx;
 }
 
-export function get(): NodeCG.default.ServerAPI<Configschema> {
+export function get(): NodeCGServerAPI {
   return nodecg;
 }

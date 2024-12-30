@@ -1,5 +1,5 @@
 import { useReplicant } from 'nodecg-vue-composable';
-import type { ExampleReplicant } from '../types/schemas/exampleReplicant';
+import type { Schemas } from '../types';
 
 const thisBundle = 'nodecg-vue-ts-template';
 
@@ -8,4 +8,4 @@ const thisBundle = 'nodecg-vue-ts-template';
  * "useReplicant" is a helper composable to make accessing/modifying replicants easier.
  * For more information see https://github.com/Dan-Shields/nodecg-vue-composable
  */
-export const exampleReplicant = useReplicant<ExampleReplicant>('exampleReplicant', thisBundle);
+export const exampleReplicant = useReplicant<Schemas.ExampleReplicant>('exampleReplicant', thisBundle);

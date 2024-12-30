@@ -1,4 +1,4 @@
-import type { ExampleType } from '../types/ExampleType.js';
+import type { ExampleType } from '../types/index.js';
 import { get as nodecg } from './util/nodecg.js';
 import { exampleReplicant } from './util/replicants.js';
 
