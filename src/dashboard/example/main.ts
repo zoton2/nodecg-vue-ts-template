@@ -1,5 +1,5 @@
 import '@quasar/extras/material-icons/material-icons.css';
-import '@quasar/extras/mdi-v6/mdi-v6.css';
+import '@quasar/extras/mdi-v7/mdi-v7.css';
 import '@quasar/extras/roboto-font/roboto-font.css';
 import { createHead } from '@unhead/vue';
 import { Dark, Quasar } from 'quasar';
@@ -9,7 +9,7 @@ import App from './main.vue';
 
 const app = createApp(App);
 const head = createHead();
-app.use(Quasar, {});
+app.use(Quasar);
 app.use(head);
 app.mount('#app');
 Dark.set(true);
