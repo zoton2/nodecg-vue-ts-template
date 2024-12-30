@@ -2,7 +2,7 @@
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    ".eslintignore": ".eslintrc.*.js",
+    ".eslintrc.js": ".eslintrc.*.js, .eslintignore",
   },
   "typescript.tsdk": "node_modules/typescript/lib"
 }
