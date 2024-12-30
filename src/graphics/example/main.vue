@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { ExampleType } from '@nodecg-vue-ts-template/types';
-import { ExampleReplicant } from '@nodecg-vue-ts-template/types/schemas';
 import { useHead } from '@unhead/vue';
 import { useReplicant } from 'nodecg-vue-composable';
 import { ref } from 'vue';
+import type { ExampleType } from '../../types';
+import type { ExampleReplicant } from '../../types/schemas/exampleReplicant';
 
 const text = ref('Example');
 
