@@ -37,9 +37,6 @@
     "watch:browser": "npm run clean:browser && vite",
     "watch:extension": "npm run clean:extension && tsc -b tsconfig.extension.json -w"
   },
-  "dependencies": {
-    "module-alias": "^2.2.3"
-  },
   "devDependencies": {
     "@nodecg/types": "^2.3.2",
     "@quasar/extras": "^1.16.15",
