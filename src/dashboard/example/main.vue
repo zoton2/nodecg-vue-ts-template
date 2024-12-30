@@ -1,21 +1,13 @@
 <script setup lang="ts">
 import { useHead } from '@unhead/vue';
-import { useReplicant } from 'nodecg-vue-composable';
 import { ref } from 'vue';
+import { exampleReplicant } from '../../browser_shared/replicants';
 import type { ExampleType } from '../../types';
-import type { ExampleReplicant } from '../../types/schemas';
 
 const text = ref('Example');
 
 // Set the title of this page.
 useHead({ title: 'example' });
-
-// Helper composable to make accessing/modifying replicants easier.
-// For more information see https://github.com/Dan-Shields/nodecg-vue-composable
-const exampleReplicant = useReplicant<ExampleReplicant>(
-  'exampleReplicant',
-  'nodecg-vue-ts-template',
-);
 
 // Accessing normal types.
 const exampleType: ExampleType = { exampleProperty: 'exampleString' };
@@ -28,5 +20,7 @@ const exampleType: ExampleType = { exampleProperty: 'exampleString' };
     <img src="./image.png" :style="{ width: '100%' }">
     <br><br>
     <QBtn color="primary" label="Example" />
+    <br><br>
+    {{ exampleReplicant?.data?.exampleProperty }}
   </div>
 </template>
