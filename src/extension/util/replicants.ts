@@ -1,16 +1,16 @@
 /* eslint-disable max-len */
 
-import type { ExampleReplicant } from '@nodecg-vue-ts-template/types/schemas';
 import type NodeCG from '@nodecg/types';
-import { get as nodecg } from './nodecg';
+import type { ExampleReplicant } from '../../types/schemas/exampleReplicant.js';
+import { get as nodecg } from './nodecg.js';
 
 // Wrapper for replicants that have a default (based on schema).
 function hasDefault<T>(name: string) {
-  return nodecg().Replicant<T>(name) as unknown as NodeCG.ServerReplicantWithSchemaDefault<T>;
+  return nodecg().Replicant<T>(name) as unknown as NodeCG.default.ServerReplicantWithSchemaDefault<T>;
 }
 // Wrapper for replicants that don't have a default (based on schema).
 function hasNoDefault<T>(name: string) {
-  return nodecg().Replicant<T>(name) as unknown as NodeCG.ServerReplicant<T>;
+  return nodecg().Replicant<T>(name) as unknown as NodeCG.default.ServerReplicant<T>;
 }
 
 /**

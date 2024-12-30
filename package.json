@@ -12,6 +12,7 @@
   },
   "license": "MIT",
   "author": "zoton2",
+  "type": "module",
   "scripts": {
     "autofix": "run-s autofix:*",
     "autofix:dashboard": "eslint --fix --ext .ts,.vue src/dashboard",
@@ -43,6 +44,7 @@
     "@nodecg/types": "^2.1.12",
     "@quasar/extras": "^1.16.11",
     "@quasar/vite-plugin": "^1.7.0",
+    "@tsconfig/node22": "^22.0.0",
     "@types/node": "^18.19.39",
     "@typescript-eslint/eslint-plugin": "^7.13.1",
     "@typescript-eslint/parser": "^7.13.1",

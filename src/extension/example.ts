@@ -1,6 +1,6 @@
-import type { ExampleType } from '@nodecg-vue-ts-template/types';
-import { get as nodecg } from './util/nodecg';
-import { exampleReplicant } from './util/replicants';
+import type { ExampleType } from '../types/ExampleType.js';
+import { get as nodecg } from './util/nodecg.js';
+import { exampleReplicant } from './util/replicants.js';
 
 nodecg().log.info('Extension code working!');
 
