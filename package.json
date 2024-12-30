@@ -68,7 +68,7 @@
     "vue-tsc": "~2.1.10"
   },
   "nodecg": {
-    "compatibleRange": "^2.0.0",
+    "compatibleRange": "^2.3.0",
     "dashboardPanels": [
       {
         "name": "example",
@@ -81,12 +81,6 @@
         "file": "example/main.html",
         "width": 1920,
         "height": 1080
-      }
-    ],
-    "mount": [
-      {
-        "directory": "src",
-        "endpoint": "src"
       }
     ]
   }
