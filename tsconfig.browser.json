@@ -4,11 +4,12 @@
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.browser.tsbuildinfo",
   },
   "include": [
+    "./src/browser_shared/**/*.ts",
+    "./src/browser_shared/**/*.vue",
     "./src/dashboard/**/*.ts",
     "./src/dashboard/**/*.vue",
     "./src/graphics/**/*.ts",
     "./src/graphics/**/*.vue",
-    "./src/types/augment-window.d.ts",
-    // "./src/types/**/*.d.ts"
-  ],
+    "./src/types/**/*.d.ts"
+  ]
 }
