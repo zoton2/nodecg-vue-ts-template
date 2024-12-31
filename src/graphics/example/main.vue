@@ -4,12 +4,10 @@ import { ref } from 'vue';
 import { exampleReplicant } from '../../browser_shared/replicants';
 import type { ExampleType } from '../../types';
 
+useHead({ title: 'example' }); // set the title of this page
 const text = ref('Example');
 
-// Set the title of this page.
-useHead({ title: 'example' });
-
-// Accessing normal types.
+// Example code: accessing normal types.
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const exampleType: ExampleType = { exampleProperty: 'exampleString' };
 </script>
@@ -20,6 +18,7 @@ const exampleType: ExampleType = { exampleProperty: 'exampleString' };
     <br><br>
     <img src="./image.png">
     <br><br>
+    <!-- Example code: accessing a replicant. -->
     {{ exampleReplicant?.data?.exampleProperty }}
   </div>
 </template>

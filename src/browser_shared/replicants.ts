@@ -1,6 +1,7 @@
 import { useReplicant } from 'nodecg-vue-composable';
 import type { Schemas } from '../types';
 
+// YOU MUST CHANGE THIS TO YOUR BUNDLE'S NAME!
 const thisBundle = 'nodecg-vue-ts-template';
 
 /**
