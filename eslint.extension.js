@@ -9,5 +9,10 @@ export default tseslint.config({
   ],
   files: [
     'src/extension/**/*.ts',
+    'src/types/**/*.d.ts',
+  ],
+  ignores: [
+    'src/types/schemas/**/*.d.ts',
+    'src/types/env.d.ts',
   ],
 });
