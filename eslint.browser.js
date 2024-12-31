@@ -3,6 +3,7 @@ import vueTsEslintConfig from '@vue/eslint-config-typescript';
 import pluginVue from 'eslint-plugin-vue';
 import tseslint from 'typescript-eslint';
 
+/* Rules used for anything browser related (dashboard and graphics). */
 export default tseslint.config({
   extends: [
     pluginVue.configs['flat/essential'],

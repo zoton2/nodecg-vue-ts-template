@@ -2,6 +2,7 @@
 import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';
 
+/* Rules used for anything extension related. */
 export default tseslint.config({
   extends: [
     eslint.configs.recommended,
