@@ -7,5 +7,6 @@ export default async (nodecg: NodeCGServerAPI) => {
    * to force things to be loaded *after* the NodeCG context is set.
    */
   set(nodecg);
+  await import('./util/replicants.js'); // make sure replicants are set up
   await import('./example.js');
 };
