@@ -9,7 +9,7 @@ export default defineConfig({
   plugins: [
     vue({ template: { transformAssetUrls } }),
     quasar({ autoImportComponentCase: 'pascal' }),
-    checker({ vueTsc: true }),
+    checker({ vueTsc: { tsconfigPath: 'tsconfig.browser.json' } }),
     NodeCGPlugin({
       inputs: {
         'graphics/*/main.ts': './src/graphics/template.html',
