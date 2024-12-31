@@ -54,7 +54,8 @@
       {
         "name": "example",
         "title": "Example",
-        "file": "example/main.html"
+        "file": "example/main.html",
+        "width": 3
       }
     ],
     "graphics": [
