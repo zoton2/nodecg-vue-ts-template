@@ -8,4 +8,5 @@ nodecg().log.info('Extension code working!');
 exampleReplicant.value = { exampleProperty: `exampleString_Changed_${Date.now()}` };
 
 // Accessing normal types.
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const exampleType: ExampleType = { exampleProperty: 'exampleString' };

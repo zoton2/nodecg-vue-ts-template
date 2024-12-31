@@ -10,6 +10,7 @@ const text = ref('Example');
 useHead({ title: 'example' });
 
 // Accessing normal types.
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const exampleType: ExampleType = { exampleProperty: 'exampleString' };
 </script>
 
