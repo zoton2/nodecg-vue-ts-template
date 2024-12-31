@@ -4,6 +4,15 @@ import browser from './eslint.browser.js';
 import extension from './eslint.extension.js';
 
 export default tseslint.config([
+  {
+    ignores: [
+      // Ignore built files.
+      'dashboard/**/*',
+      'extension/**/*',
+      'graphics/**/*',
+      'shared/dist/**/*',
+    ],
+  },
   browser,
   extension,
 ]);
