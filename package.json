@@ -43,11 +43,16 @@
     "trash-cli": "^6.0.0",
     "typescript": "^5.7.2",
     "typescript-eslint": "^8.18.2",
-    "vite": "^5.4.11",
+    "vite": "^6.0.6",
     "vite-plugin-checker": "^0.8.0",
     "vite-plugin-nodecg": "^2.1.0",
     "vue": "^3.5.13",
     "vue-tsc": "~2.1.10"
+  },
+  "overrides": {
+    "vite-plugin-nodecg": {
+      "vite": "$vite"
+    }
   },
   "nodecg": {
     "compatibleRange": "^2.3.0",
