@@ -19,7 +19,7 @@
     "build": "vite build && tsc -b tsconfig.extension.json",
     "lint": "eslint",
     "schema-types": "nodecg schema-types",
-    "start": "node ../..",
+    "start": "cd ../.. && node index.js",
     "watch": "conc -n B,E -c red,blue -k vite \"tsc -b -w --preserveWatchOutput tsconfig.extension.json\""
   },
   "devDependencies": {
@@ -35,7 +35,7 @@
     "@vue/tsconfig": "^0.7.0",
     "concurrently": "^9.1.2",
     "eslint": "^9.22.0",
-    "eslint-plugin-vue": "^9.33.0",
+    "eslint-plugin-vue": "^10.0.0",
     "nodecg-vue-composable": "^1.1.0",
     "quasar": "^2.18.1",
     "sass-embedded": "^1.85.1",
