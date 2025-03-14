@@ -48,6 +48,11 @@
     "vue": "^3.5.13",
     "vue-tsc": "^2.2.8"
   },
+  "pnpm": {
+    "overrides": {
+      "vite-plugin-nodecg>vite": "$vite"
+    }
+  },
   "nodecg": {
     "compatibleRange": "^2.3.0",
     "dashboardPanels": [
