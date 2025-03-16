@@ -1,4 +1,4 @@
-import type NodeCG from '@nodecg/types';
+import type NodeCG from 'nodecg/types';
 import type { Schemas } from '../../types/index.js';
 import { nodecg } from './nodecg.js';
 
