@@ -5,53 +5,65 @@ Template for NodeCG bundles that use Vue.js and TypeScript.
 
 ## Technical Details
 
-- Tested with Node.js v18 (as of writing, latest LTS properly tested with NodeCG).
+- Tested with Node.js v22.11.0 and above (as of writing, latest LTS properly tested and supported with NodeCG).
 - Extension uses TypeScript.
 - Browser uses Vue.js (v3), with TypeScript for the scripting.
   - Includes the [nodecg-vue-composable](https://github.com/Dan-Shields/nodecg-vue-composable) helper composable to help with using replicants; I advise you check it's README for more information.
   - Dashboard also includes Quasar, for easy styling of UI.
+    - If you wish to configure Quasar differently, check [the quasar vite-plugin documentation](https://quasar.dev/start/vite-plugin#using-quasar).
   - Builds using Vite, using the [vite-plugin-nodecg](https://github.com/dan-shields/vite-plugin-nodecg) plugin.
-- Includes module alias support for both extension and browser.
+    - The bundle also overrides `vite` to v6 (dependency asks for v5) as it is tested working.
 - ESLint is included for extension/browser/typings.
-  - Extends [airbnb-typescript/base](https://github.com/iamturns/eslint-config-airbnb-typescript), alongside a few other recommended/essential packages.
-  - Has some personal choices/override rules, but not many.
-- I personally use Visual Studio Code with some appropriate extensions ([Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) for example), so have made sure it works well in that editor.
+  - Extends some other recommended configurations.
+- I personally use Visual Studio Code with some appropriate extensions so have made sure it works well in that editor.
+  - Includes a `.vscode/extensions.json` that will suggest you appropriate extensions.
+  - Includes a `.vscode/settings.json` that has some settings that you may find useful.
 - The extension/browser files have some example code scattered about that should help in how to use things.
 
-To use module aliases, you must change all the parts labelled with `@nodecg-vue-ts-template`; either substitute in your own bundle name, or something else you feel is appropriate. The main places these are in are:
-- [`./tsconfig.browser.json`](tsconfig.browser.json)
-- [`./tsconfig.extension.json`](tsconfig.extension.json)
-- [`./vite.config.mjs`](vite.config.mjs)
-- [`./src/extension/index.ts`](src/extension/index.ts)
+## Limitations
 
+- I don't use any JSON schema specs higher than `draft-07` due to Visual Studio Code not supporting them correctly; see [this issue](https://github.com/microsoft/vscode/issues/98724).
 
 ## Package Commands
 
 - `autofix`: Automatically fix any possible linting errors using ESLint.
-- `autofix:dashboard`: See above, but only for dashboard based code.
-- `autofix:graphics`: See above, but only for graphics based code.
-- `autofix:extension`: See above, but only for extension based code.
-- `autofix:types`: See above, but only for typings in the `src/types` directory.
-- `prebuild`: Alias for `clean`, will automatically run before `build` if called.
+- `prebuild`: Clean up all built/watched files; will automatically run before `build` if called.
 - `build`: Build written code for use in production.
-- `build:browser`: See above, but only for browser based code.
-- `build:extension`: See above, but only for extension based code.
 - `clean`: Clean up all built/watched files.
-- `clean:browser`: See above, but only for browser based files.
-- `clean:extension`: See above, but only for extension based files.
 - `lint`: Finds any possible linting errors using ESLint, but does not fix them.
-- `lint:dashboard`: See above, but only for dashboard based code.
-- `lint:graphics`: See above, but only for graphics based code.
-- `lint:extension`: See above, but only for extension based code.
-- `lint:types`: See above, but only for typings in the `src/types` directory.
-- `schema-types`: Create TypeScript typings for schemas/`Configschema.json` using `nodecg-cli`.
+- `schema-types`: Create TypeScript typings for schemas/`Configschema.json` using `nodecg` CLI.
 - `start`: Start NodeCG.
 - `watch`: Build code and watch for changes, for use in development.
-- `watch:browser`: See above, but only for browser based code.
-- `watch:extension`: See above, but only for extension based code.
 
+## Changelogs
 
-## Differences between template v1 and v2...
+All changes onwards from v3.0.0 are available on the [releases](/releases) section. Other changelogs are available below.
+
+### Differences between template v2 and v3...
+
+This is a "brief" list of changes, although in relality it was mostly rewritten from the ground up, so there are probably more.\
+If you want to see all the changes, check out the commit comparison (TBA).
+
+- Switched Vite config file to TypeScript (`vite.config.mjs` > `vite.config.ts`).
+- Updated how the extension code is built and how it is run in a Node.js context:
+  - It now runs using the `module` type.
+  - It is built targetting more modern standards (based on `@tsconfig/node22`).
+- All updates needed for NodeCG v2, which isn't too many but is still some (mainly type related).
+- Bumped `package.json`s `nodecg.compatibleRange` to `^2.3.0`, as that's the first NodeCG version that properly supported Node.js v22.11.0 LTS.
+- Replaced third party NodeCG types with official library, [@nodecg/types](https://www.npmjs.com/package/@nodecg/types).
+- Replaced [@vueuse/head](https://github.com/vueuse/head) with [@unhead/vue](https://github.com/unjs/unhead), due to the former's sunsetting.
+- ESLint overhaul:
+  - Upgraded from ESLint v9 from v8.
+  - Switched to using flat configs.
+  - A lot was stripped out that I don't think was needed (feel free to report any issues you may have).
+  - No longer extends the configuration from airbnb-typescript, as it isn't available for ESLint v9 yet, and I wanted to try without it.
+- Reduced the amount of `package.json` scripts/commands by combining some of them and removing the extension/browser/etc. splits.
+- Added a `./src/browser_shared` folder with a shared `replicant.ts` helper file for browser contexts.
+- Removed MDI CSS being imported by default on dashboard panels.
+- Removed the `module-alias` parts as I felt they may have made things too confusing.
+- Moved browser `*.ts` entry files into the the respective sub-directories for better organisation.
+
+### Differences between template v1 and v2...
 
 - Upgraded Vue to v3 from v2.
 - Uses Vite to build browser code instead of Webpack.
@@ -60,11 +72,4 @@ To use module aliases, you must change all the parts labelled with `@nodecg-vue-
 - Adds [nodecg-vue-composable](https://github.com/Dan-Shields/nodecg-vue-composable) to help with using/modifying replicants in browser.
 - No longer includes any Vue state plugins by default (as no longer needed for replicants), but you can add one if needed (I'd suggest [pinia](https://pinia.vuejs.org/)).
 - Includes [@vueuse/head](https://github.com/vueuse/head), in the example code just used to help change the title of each page.
-- ~~Uses the [nodecg-types](https://github.com/codeoverflow-org/nodecg-types) package instead of directly referencing the installed NodeCG instance.~~
-
-### Differences between template v2 and v2.1...
-
-- All updates needed for NodeCG v2, which isn't too many but is still some (mainly type related).
-- Replaced third party NodeCG types with official library, [@nodecg/types](https://www.npmjs.com/package/@nodecg/types).
-- Replaced [@vueuse/head](https://github.com/vueuse/head) with [@unhead/vue](https://github.com/unjs/unhead), due to the former's sunsetting.
-- Lots of other minor things; check the GitHub differences here: TBD.
+- Uses the [nodecg-types](https://github.com/codeoverflow-org/nodecg-types) package instead of directly referencing the installed NodeCG instance.
