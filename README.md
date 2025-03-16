@@ -37,7 +37,7 @@ Template for NodeCG bundles that use Vue.js and TypeScript.
 
 ## Changelogs
 
-All changes onwards from v3.0.0 are available on the [releases](/releases) section. Other changelogs are available below.
+All changes onwards from v3.0.0 are available on the [releases](../../releases) section. Other changelogs are available below.
 
 ### Differences between template v2 and v3...
 
