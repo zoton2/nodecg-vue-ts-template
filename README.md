@@ -41,8 +41,9 @@ All changes onwards from v3.0.0 are available on the [releases](../../releases) 
 
 ### Differences between template v2 and v3...
 
-This is a "brief" list of changes, although in relality it was mostly rewritten from the ground up, so there are probably more.\
-If you want to see all the changes, check out the commit comparison (TBA).
+This is a "brief" list of changes, although in relality it was mostly rewritten from the ground up, so there are probably more.
+
+If you want to see all of the changes, check out the commit comparison (TBA).
 
 - Switched Vite config file to TypeScript (`vite.config.mjs` > `vite.config.ts`).
 - Updated how the extension code is built and how it is run in a Node.js context:
@@ -50,7 +51,7 @@ If you want to see all the changes, check out the commit comparison (TBA).
   - It is built targetting more modern standards (based on `@tsconfig/node22`).
 - All updates needed for NodeCG v2, which isn't too many but is still some (mainly type related).
 - Bumped `package.json`s `nodecg.compatibleRange` to `^2.3.0`, as that's the first NodeCG version that properly supported Node.js v22.11.0 LTS.
-- Replaced third party NodeCG types with official library, [@nodecg/types](https://www.npmjs.com/package/@nodecg/types).
+- Use NodeCG types from official dependency.
 - Replaced [@vueuse/head](https://github.com/vueuse/head) with [@unhead/vue](https://github.com/unjs/unhead), due to the former's sunsetting.
 - ESLint overhaul:
   - Upgraded from ESLint v9 from v8.
