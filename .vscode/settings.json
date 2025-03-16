@@ -4,5 +4,10 @@
   "explorer.fileNesting.patterns": {
     "eslint.config.js": "eslint.*.js",
   },
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "editor.tabSize": 2,
+  "files.eol": "\n",
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  },
+  "typescript.tsdk": "node_modules\\typescript\\lib",
 }
