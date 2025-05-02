@@ -43,7 +43,7 @@ All changes onwards from v3.0.0 are available on the [releases](../../releases) 
 
 This is a "brief" list of changes, although in relality it was mostly rewritten from the ground up, so there are probably more.
 
-If you want to see all of the changes, check out the commit comparison (TBA).
+If you want to see all of the changes, check out the [original PR](https://github.com/zoton2/nodecg-vue-ts-template/pull/24).
 
 - Switched Vite config file to TypeScript (`vite.config.mjs` > `vite.config.ts`).
 - Updated how the extension code is built and how it is run in a Node.js context:
