@@ -11,7 +11,7 @@ Template for NodeCG bundles that use Vue.js and TypeScript.
   - Includes the [nodecg-vue-composable](https://github.com/Dan-Shields/nodecg-vue-composable) helper composable to help with using replicants; I advise you check it's README for more information.
   - Dashboard also includes Quasar, for easy styling of UI.
     - If you wish to configure Quasar differently, check [the quasar vite-plugin documentation](https://quasar.dev/start/vite-plugin#using-quasar).
-  - Builds using Vite, using the [vite-plugin-nodecg](https://github.com/dan-shields/vite-plugin-nodecg) plugin.
+  - Builds using Vite, using the [vite-plugin-nodecg](https://github.com/nodecg/vite-plugin-nodecg) plugin.
     - The bundle also overrides `vite` to v6 (dependency asks for v5) as it is tested working.
 - ESLint is included for extension/browser/typings.
   - Extends some other recommended configurations.
