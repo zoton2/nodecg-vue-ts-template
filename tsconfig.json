@@ -1,0 +1,15 @@
+{
+  /* Exists so anything looking for a tsconfig file (including VSCode) can find the settings. */
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.browser.json"
+    },
+    {
+      "path": "./tsconfig.extension.json"
+    },
+    {
+      "path": "./tsconfig.vite.json"
+    }
+  ]
+}

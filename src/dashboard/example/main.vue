@@ -1,26 +1,14 @@
 <script setup lang="ts">
-import { ExampleType } from '@nodecg-vue-ts-template/types';
-import { Configschema, ExampleReplicant } from '@nodecg-vue-ts-template/types/schemas';
-import { useHead } from '@vueuse/head';
-import { useReplicant } from 'nodecg-vue-composable';
+import { useHead } from '@unhead/vue';
 import { ref } from 'vue';
+import { exampleReplicant } from '../../browser_shared/replicants';
+import type { ExampleType } from '../../types';
 
+useHead({ title: 'example' }); // set the title of this page
 const text = ref('Example');
 
-// Set the title of this page.
-useHead({ title: 'example' });
-
-// Helper composable to make accessing/modifying replicants easier.
-// For more information see https://github.com/Dan-Shields/nodecg-vue-composable
-const exampleReplicant = useReplicant<ExampleReplicant>(
-  'exampleReplicant',
-  'nodecg-vue-ts-template',
-);
-
-// Access the bundle configuration with types.
-const config = nodecg.bundleConfig as Configschema;
-
-// Accessing normal types.
+// Example code: accessing normal types.
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const exampleType: ExampleType = { exampleProperty: 'exampleString' };
 </script>
 
@@ -28,8 +16,17 @@ const exampleType: ExampleType = { exampleProperty: 'exampleString' };
   <div>
     {{ text }}
     <br><br>
-    <img src="./image.png" :style="{ width: '100%' }">
+    <img
+      src="./image.png"
+      :style="{ width: '100%' }"
+    >
     <br><br>
-    <QBtn color="primary" label="Example" />
+    <QBtn
+      color="primary"
+      label="Example"
+    />
+    <br><br>
+    <!-- Example code: accessing a replicant. -->
+    {{ exampleReplicant?.data?.exampleProperty }}
   </div>
 </template>
