@@ -29,9 +29,9 @@
     "@tsconfig/node22": "^22.0.2",
     "@types/node": "^22.18.13",
     "@unhead/vue": "^2.0.19",
-    "@vitejs/plugin-vue": "^5.2.4",
+    "@vitejs/plugin-vue": "^6.0.1",
     "@vue/eslint-config-typescript": "^14.6.0",
-    "@vue/tsconfig": "^0.7.0",
+    "@vue/tsconfig": "^0.8.1",
     "concurrently": "^9.2.1",
     "eslint": "^9.39.0",
     "eslint-plugin-vue": "^10.5.1",
@@ -39,14 +39,14 @@
     "nodecg-vue-composable": "^1.1.0",
     "quasar": "^2.18.5",
     "sass-embedded": "^1.93.3",
-    "trash-cli": "^6.0.0",
+    "trash-cli": "^7.0.0",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.46.2",
-    "vite": "^6.4.1",
-    "vite-plugin-checker": "^0.9.1",
+    "vite": "^7.1.12",
+    "vite-plugin-checker": "^0.11.0",
     "vite-plugin-nodecg": "^2.1.0",
     "vue": "^3.5.22",
-    "vue-tsc": "^2.2.12"
+    "vue-tsc": "^3.1.2"
   },
   "pnpm": {
     "overrides": {
