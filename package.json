@@ -35,7 +35,7 @@
     "concurrently": "^9.2.1",
     "eslint": "^9.39.0",
     "eslint-plugin-vue": "^10.5.1",
-    "nodecg": "^2.6.1",
+    "nodecg": "^2.6.4",
     "nodecg-vue-composable": "^1.1.0",
     "quasar": "^2.18.5",
     "sass-embedded": "^1.93.3",
